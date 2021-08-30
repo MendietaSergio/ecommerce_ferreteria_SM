@@ -1,0 +1,81 @@
+
+button.btn-menu{
+    border: none;
+    height: auto;
+    outline: none;
+    width: 50px;
+    background-color: #1d82d3;
+}
+button.btn-menu .fa-times:before{
+    color: white;
+    height: 50px;
+    vertical-align: middle;
+    width: .8rem;
+}
+button.btn-menu i{
+    color:white;
+    font-weight: 900;
+    font-size: 24px;
+}
+.logo img {
+    width: 70px;
+    height: 60px;
+}
+
+
+.menu{
+    position: fixed;
+    left: 0;
+    top: 8rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+.menu.is-active{
+    opacity: 1;
+    pointer-events: auto;
+    background-color: #1d82d3;
+}
+.menu a{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 30px;
+    padding: 15px 0;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    color:silver;
+}
+@media screen and (min-width: 992px){
+    button.btn-menu{
+        display: none;
+    }
+    .menu{
+        position: static;
+        width: auto;
+        flex-direction: row;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .menu a{
+        text-transform: uppercase;
+        border-bottom: none;
+        padding: 0 1rem;
+        font-size: 1.1rem;
+    }
+    .menu a:last-child{
+        padding-right: 0;
+    }
+    .menu a:hover{
+        background-color: transparent;
+    }
+    .logo img {
+        width: 70px;
+        height: 60px;
+    }
+}
