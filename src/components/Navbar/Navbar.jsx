@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../images/Logo.png"
+// import Logo from "%PUBLIC_URL%/Logo.png"
 import Button from "../Button/Button";
 import CartWidget from "../CartWidget/CartWidget";
 import Search from "../Search/Search";
@@ -15,7 +15,7 @@ const Navbar = () => {
         <>
             <div className="logo">
                 <Link to="/">
-                    <img src={Logo} onClick={closeNav}/>
+                    <img onClick={closeNav}/>
                 </Link>
             </div>
             <button className="btn-menu" onClick={handleShow}>

@@ -4,7 +4,7 @@ const products = [
         title:"Rejilla De Acero Inoxidable Univers",
         description: "Rejilla de acero inoxidable para ducha",
         price: 329.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -13,7 +13,7 @@ const products = [
         title:"Mini Rodillo El Galgo Forrado 5 Cm",
         description: "Mini Rodillo El Galgo Forrado 5 Cm",
         price: 119.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -22,7 +22,7 @@ const products = [
         title:"Enduido Interior 1ltr Andina",
         description: "Enduido Interior 1ltr Andina",
         price: 359.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -31,7 +31,7 @@ const products = [
         title:"Poxipol 10 Minutos Transp. 1 Un",
         description: "Poxipol 10 Minutos Transp. 1 Un",
         price: 410.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -40,7 +40,7 @@ const products = [
         title:"Adhesivo Para Calzado Deportivo 3grs Pegamil",
         description: "Adhesivo Para Calzado Deportivo 3grs Pegamil",
         price: 135.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -49,7 +49,7 @@ const products = [
         title:"3M cinta de enmascarara 18mm x 40m",
         description: "3M cinta de enmascarara 8mm x 40m",
         price: 185.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -58,7 +58,7 @@ const products = [
         title:"Adhesivo Para Calzado Deportivo 3grs Pegamil",
         description: "Adhesivo Para Calzado Deportivo 3grs Pegamil",
         price: 135.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -67,7 +67,7 @@ const products = [
         title:"Adhesivo Para Zapatillas 9grs Eccole",
         description: "Adhesivo Para Zapatillas 9grs Eccole",
         price: 399.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -76,7 +76,7 @@ const products = [
         title:"Agua 5lt Desmineralizada Match 1",
         description: "Agua 5lt Desmineralizada Match 1",
         price: 249.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -85,7 +85,7 @@ const products = [
         title:"3m Cinta Aisladora Temflex 1550 Negra 18mm X 10m",
         description: "3m Cinta Aisladora Temflex 1550 Negra 18mm X 10m",
         price: 99.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -94,7 +94,7 @@ const products = [
         title:"Cinta De Montaje 25mmx1.27m 3m Scotch",
         description: "Cinta De Montaje 25mmx1.27m 3m Scotch",
         price: 419.00,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -112,7 +112,7 @@ const products = [
         title:"Cinta Scotch Empaque Transp 24 Mm X 50 Mts",
         description: "Cinta Scotch Empaque Transp 24 Mm X 50 Mts",
         price: 149.00,
-        pictureUrl: "../images/Productos/Cinta_Scotch_Empaque_Trans_24mmx50Mts.jpg",
+        pictureUrl: "Cinta_Scotch_Empaque_Trans_24mmx50Mts.jpg",
         offer: true,
         stock: 10
     },
@@ -121,7 +121,7 @@ const products = [
         title:"Clavos De Hierro 10 X 35 - 68 uni.",
         description: "Clavos De Hierro 10 X 35 - 68 uni.",
         price: 145.00,
-        pictureUrl: "../images/Productos/Clavos_Hierro_10x35_68uni.jpg",
+        pictureUrl: "Clavos_Hierro_10x35_68uni.jpg",
         offer: true,
         stock: 10
     },
@@ -130,7 +130,7 @@ const products = [
         title:"Disco Corte Metal 115 1.6 Mm",
         description: "Disco Corte Metal 115 1.6 Mm",
         price: 79.00,
-        pictureUrl: "../images/Productos/Disco_Corte_Metal_115_1.6Mm.jpg",
+        pictureUrl: "Disco_Corte_Metal_115_1.6Mm.jpg",
         offer: true,
         stock: 10
     },
@@ -139,7 +139,7 @@ const products = [
         title:"Enduido Interior 1ltr Andina",
         description: "Enduido Interior 1ltr Andina",
         price: 359.00,
-        pictureUrl: "../images/Productos/Enduido_Interior_1ltr_Andina.jpg",
+        pictureUrl: "Enduido_Interior_1ltr_Andina.jpg",
         offer: true,
         stock: 10
     },
@@ -148,7 +148,7 @@ const products = [
         title:"Escalera Articulada 12 Escalones Aluminio",
         description: "Escalera Articulada 12 Escalones Aluminio",
         price: 14.000,
-        pictureUrl: "../images/Productos/Escalera_Articulada_12Escalones_alumin.jpg",
+        pictureUrl: "Escalera_Articulada_12Escalones_alumin.jpg",
         offer: true,
         stock: 10
     },
@@ -157,7 +157,7 @@ const products = [
         title:"Escalera Articulada 16 Escalones Aluminio",
         description: "Escalera Articulada 16 Escalones Aluminio",
         price: 18.889,
-        pictureUrl: "../images/Productos/Escalera_Articulada_16Escalones_aluminio.jpg",
+        pictureUrl: "Escalera_Articulada_16Escalones_aluminio.jpg",
         offer: true,
         stock: 10
     },
@@ -166,7 +166,7 @@ const products = [
         title:"Esmalte Mate Satinplas Sintético Blanco 1l Sinteplast",
         description: "Esmalte Mate Satinplas Sintético Blanco 1l Sinteplast",
         price: 1.625,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -175,7 +175,7 @@ const products = [
         title:"Mini Rodillo El Galgo Forrado 5 Cm",
         description: "Mini Rodillo El Galgo Forrado 5 Cm",
         price: 119,
-        pictureUrl: "../images/Productos/Mini_Rodillo_El_Galgo_Forrado_5Cm.jpg",
+        pictureUrl: "Mini_Rodillo_El_Galgo_Forrado_5Cm.jpg",
         offer: true,
         stock: 10
     },
@@ -184,7 +184,7 @@ const products = [
         title:"Lubricante Wd-40 Aerosol Aerosol 155grs",
         description: "Lubricante Wd-40 Aerosol Aerosol 155grs",
         price: 489,
-        pictureUrl: "../images/Productos/Lubricante_WD-40_aerosol_155grs.jpg",
+        pictureUrl: "Lubricante_WD-40_aerosol_155grs.jpg",
         offer: true,
         stock: 10
     },
@@ -193,7 +193,7 @@ const products = [
         title:"Pegamento En Gel 2ml La Gotita",
         description: "Pegamento En Gel 2ml La Gotita",
         price: 189,
-        pictureUrl: "../images/Productos/Pegamento_en_gel_2ml_la_gotita.jpg",
+        pictureUrl: "Pegamento_en_gel_2ml_la_gotita.jpg",
         offer: true,
         stock: 10
     },
@@ -202,7 +202,7 @@ const products = [
         title:"Pegamento Instantaneo 2 Gramos Pegamil",
         description: "Pegamento Instantaneo 2 Gramos Pegamil",
         price: 97,
-        pictureUrl: "../images/Productos/Pegamento_inst_2grs_pegamil.jpg",
+        pictureUrl: "Pegamento_inst_2grs_pegamil.jpg",
         offer: true,
         stock: 10
     },
@@ -211,7 +211,7 @@ const products = [
         title:"Pegamento La Gotita 2ml La Gotita",
         description: "Pegamento La Gotita 2ml La Gotita",
         price: 155,
-        pictureUrl: "../images/Productos/Pegamento_la_gotita_2ml.jpg",
+        pictureUrl: "Pegamento_la_gotita_2ml.jpg",
         offer: true,
         stock: 10
     },
@@ -220,7 +220,7 @@ const products = [
         title:"Pincel Obra Nro.10 Top Home",
         description: "Pincel Obra Nro.10 Top Home",
         price: 130,
-        pictureUrl: "../images/Productos/Pincel_nro10_home.jpg",
+        pictureUrl: "Pincel_nro10_home.jpg",
         offer: true,
         stock: 10
     },
@@ -229,7 +229,7 @@ const products = [
         title:"Pincel Persianero Cerda Gris-10",
         description: "Pincel Persianero Cerda Gris-10",
         price: 199,
-        pictureUrl: "../images/Productos/Pincel_persianero_cerda_gris.jpg",
+        pictureUrl: "Pincel_persianero_cerda_gris.jpg",
         offer: true,
         stock: 10
     },
@@ -238,7 +238,7 @@ const products = [
         title:"Poxipol 10 Minutos Transp. 1 Un",
         description: "Poxipol 10 Minutos Transp. 1 Un",
         price: 410,
-        pictureUrl: "../images/Productos/Poxipol_10_Minutos_Transp.1Un.jpg",
+        pictureUrl: "Poxipol_10_Minutos_Transp.1Un.jpg",
         offer: true,
         stock: 10
     },
@@ -247,7 +247,7 @@ const products = [
         title:"Poxiran Sin Tolueno 0,25 Ml 1 uni",
         description: "Poxiran Sin Tolueno 0,25 Ml 1 uni",
         price: 295,
-        pictureUrl: "../images/Productos/Poxiran_0.25M.jpg",
+        pictureUrl: "Poxiran_0.25M.jpg",
         offer: true,
         stock: 10
     },
@@ -256,7 +256,7 @@ const products = [
         title:"Set Pinceles 3u. Top Home",
         description: "Set Pinceles 3u. Top Home",
         price: 569,
-        pictureUrl: "../images/Productos/Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
         stock: 10
     },
@@ -265,7 +265,7 @@ const products = [
         title:"Tarugos Plasticos De 8 Mm. 25",
         description: "Tarugos Plasticos De 8 Mm. 25",
         price: 145,
-        pictureUrl: "../images/Productos/Tarugos_Plasticos_8Mm_25unid.jpg",
+        pictureUrl: "Tarugos_Plasticos_8Mm_25unid.jpg",
         offer: true,
         stock: 10
     },
@@ -274,7 +274,7 @@ const products = [
         title:"Latex 1lt.Cielo Rraso Sinteplast ",
         description: "Latex 1lt.Cielo Rraso Sinteplast ",
         price: 845,
-        pictureUrl: "../images/Productos/Simteplast_1lt.jpg",
+        pictureUrl: "Simteplast_1lt.jpg",
         offer: true,
         stock: 10
     }
