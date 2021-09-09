@@ -21,7 +21,7 @@ const NavBar = () => {
                                     <Search className="buscador  justify-content-end d-flex"/>
                                 </div>
                                 <div className="col justify-content-end d-flex">
-                                        <Button to="/ingresar" className="btn btn-secondary" text="Iniciar Sesión" />
+                                        <Button to="/login" className="btn btn-secondary" text="Iniciar Sesión" />
                                         <CartWidget className="carrito"/>
                                 </div>
                             </div>

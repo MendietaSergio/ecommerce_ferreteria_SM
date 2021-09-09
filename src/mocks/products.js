@@ -4,7 +4,7 @@ const products = [
         title:"Rejilla De Acero Inoxidable Univers",
         description: "Rejilla de acero inoxidable para ducha",
         price: 329.00,
-        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Rejilla_De_Acero_Inoxidable_Univers.jpg",
         offer: true,
         stock: 10
     },
@@ -13,7 +13,7 @@ const products = [
         title:"Mini Rodillo El Galgo Forrado 5 Cm",
         description: "Mini Rodillo El Galgo Forrado 5 Cm",
         price: 119.00,
-        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Mini_Rodillo_El_Galgo_Forrado_5Cm.jpg",
         offer: true,
         stock: 10
     },
@@ -22,7 +22,7 @@ const products = [
         title:"Enduido Interior 1ltr Andina",
         description: "Enduido Interior 1ltr Andina",
         price: 359.00,
-        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Enduido_Interior_1ltr_Andina.jpg",
         offer: true,
         stock: 10
     },
@@ -31,7 +31,7 @@ const products = [
         title:"Poxipol 10 Minutos Transp. 1 Un",
         description: "Poxipol 10 Minutos Transp. 1 Un",
         price: 410.00,
-        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Poxipol_10_Minutos_Transp.1Un.jpg",
         offer: true,
         stock: 10
     },
@@ -40,7 +40,7 @@ const products = [
         title:"Adhesivo Para Calzado Deportivo 3grs Pegamil",
         description: "Adhesivo Para Calzado Deportivo 3grs Pegamil",
         price: 135.00,
-        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Adhesivo_Para_Calzado_Deportivo_3grs_Pegamil.jpg",
         offer: true,
         stock: 10
     },
@@ -58,7 +58,7 @@ const products = [
         title:"Adhesivo Para Calzado Deportivo 3grs Pegamil",
         description: "Adhesivo Para Calzado Deportivo 3grs Pegamil",
         price: 135.00,
-        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Adhesivo_Para_Calzado_Deportivo_3grs_Pegamil.jpg",
         offer: true,
         stock: 10
     },
@@ -67,7 +67,7 @@ const products = [
         title:"Adhesivo Para Zapatillas 9grs Eccole",
         description: "Adhesivo Para Zapatillas 9grs Eccole",
         price: 399.00,
-        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Adhesivo_zapatillas_9grs_Eccole.jpg",
         offer: true,
         stock: 10
     },
@@ -76,7 +76,7 @@ const products = [
         title:"Agua 5lt Desmineralizada Match 1",
         description: "Agua 5lt Desmineralizada Match 1",
         price: 249.00,
-        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Agua_5lts_desmineralizada.jpg",
         offer: true,
         stock: 10
     },
@@ -85,7 +85,7 @@ const products = [
         title:"3m Cinta Aisladora Temflex 1550 Negra 18mm X 10m",
         description: "3m Cinta Aisladora Temflex 1550 Negra 18mm X 10m",
         price: 99.00,
-        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "3M_cinta_de_enmascarara_18mmx40m.jpg",
         offer: true,
         stock: 10
     },
@@ -94,7 +94,7 @@ const products = [
         title:"Cinta De Montaje 25mmx1.27m 3m Scotch",
         description: "Cinta De Montaje 25mmx1.27m 3m Scotch",
         price: 419.00,
-        pictureUrl: "Set_pinceles_3uni_top_home.jpg",
+        pictureUrl: "Cinta_Montaje_25mmx1.27M_3M_Scotch.jpg",
         offer: true,
         stock: 10
     },
@@ -103,7 +103,7 @@ const products = [
         title:"Cinta Scotch Empaque Transp 48mmx40m 3m Scotch",
         description: "Cinta Scotch Empaque Transp 48mmx40m 3m Scotch",
         price: 239.00,
-        pictureUrl: "",
+        pictureUrl: "Cinta_Scotch_Empaque_48mmx40m_3M.png",
         offer: true,
         stock: 10
     },
@@ -285,8 +285,6 @@ const getFetch = new Promise((res)=>{
    
         setTimeout(()=>{
             res(products)
-        }, 5000)
-   
-    
+        }, 2000)    
 })
 export default getFetch

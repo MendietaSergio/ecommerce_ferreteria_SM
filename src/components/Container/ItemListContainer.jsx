@@ -24,8 +24,11 @@ const ItemListContainer = ({ mensaje}) => {
             <div className="container">
                 <h1 className="text-center my-4">{mensaje}</h1>
 
-                { loading ? 
-                <h2 className="text-center my-4">Cargando...</h2>
+                { loading ?
+                (<>
+                <h2 className="text-center my-4">Cargando <i className="fas fa-spinner fa-pulse" /></h2>
+                
+                </>)
                 :<ItemList products={products} />   }
                 
             </div>

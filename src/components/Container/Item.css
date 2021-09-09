@@ -1,4 +1,19 @@
 .card{
-    width: 18rem;
+    width: 16rem;
     margin: 10px;
+}
+.card-img-top{
+    height: 150px;
+    margin: 0 auto;
+}
+.price{
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 10px;
+}
+.card-title{
+    font-size: 1.1rem; 
+}
+.card-body{
+    padding-bottom: 0;
 }
