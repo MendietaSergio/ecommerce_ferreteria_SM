@@ -3,20 +3,25 @@ import ItemList from "./ItemList";
 import getFetch from "../../mocks/products";
 
 
-
 const ItemListContainer = ({ mensaje}) => {
     
     const [ products, setProducts ] = useState([])
     const [ loading, setLoading ] = useState(true)
     
     useEffect (() =>{
-        getFetch
-        .then(res =>{
-            setProducts(res)
-            setLoading(false)
-        console.log(res);
-
-        })
+        const fetProducts = async() =>{
+           await getFetch
+            .then(res =>{
+                setProducts(res)
+                setLoading(false)
+                console.log(res);    
+            })
+            .catch(error=>{
+                console.log(error);
+            })
+            .finally(() =>setLoading(false))
+        }
+        fetProducts()
     },[])
     
     return (

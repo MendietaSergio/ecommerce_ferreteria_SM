@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../../images/Logo.png"
 import Button from "../Button/Button";
 import CartWidget from "../CartWidget/CartWidget";
@@ -14,9 +14,9 @@ const Navbar = () => {
     return (
         <>
             <div className="logo">
-                <Link to="/">
+                <NavLink to="/" activeClassName="">
                     <img src={Logo} onClick={closeNav}/>
-                </Link>
+                </NavLink>
             </div>
             <button className="btn-menu" onClick={handleShow}>
                 <span>
@@ -27,6 +27,8 @@ const Navbar = () => {
                 <>
                     <Link to="/" onClick={closeNav}>Inicio</Link>
                     <Link to="/productos" >Productos</Link>
+                    <Link to="/productos/categorias/2" >herramientas</Link>
+
                     <Link to="/contacto" onClick={closeNav}>Contacto</Link>
                     {show ? 
                     (<Button to="/ingresar" className="btn d-block btn-secondary" text="Iniciar Sesión"/>)

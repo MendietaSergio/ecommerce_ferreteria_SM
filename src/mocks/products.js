@@ -1,3 +1,5 @@
+//Hacer json mas amplio, con categoria y subcategoria
+
 const products = [
     {
         id:1,
@@ -6,7 +8,9 @@ const products = [
         price: 329.00,
         pictureUrl: "Rejilla_De_Acero_Inoxidable_Univers.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Taller",
+        subCategory:"Uso doméstico"
     },
     {
         id:2,
@@ -15,7 +19,9 @@ const products = [
         price: 119.00,
         pictureUrl: "Mini_Rodillo_El_Galgo_Forrado_5Cm.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pintureria",
+        subCategory:"Rodillo"
     },
     {
         id:3,
@@ -24,7 +30,9 @@ const products = [
         price: 359.00,
         pictureUrl: "Enduido_Interior_1ltr_Andina.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pintureria",
+        subCategory:"Enduidos"
     },
     {
         id:4,
@@ -33,7 +41,9 @@ const products = [
         price: 410.00,
         pictureUrl: "Poxipol_10_Minutos_Transp.1Un.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pegamentos",
+        subCategory:"A fines"
     },
     {
         id:5,
@@ -42,16 +52,20 @@ const products = [
         price: 135.00,
         pictureUrl: "Adhesivo_Para_Calzado_Deportivo_3grs_Pegamil.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pegamentos",
+        subCategory:"A fines"
     },
     {
         id:6,
-        title:"3M cinta de enmascarara 18mm x 40m",
+        title:"3M cinta de enmascarar 18mm x 40m",
         description: "3M cinta de enmascarara 8mm x 40m",
         price: 185.00,
         pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Cintas",
+        subCategory:"Enmascarar"
     },
     {
         id:7,
@@ -60,7 +74,9 @@ const products = [
         price: 135.00,
         pictureUrl: "Adhesivo_Para_Calzado_Deportivo_3grs_Pegamil.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pegamentos",
+        subCategory:"A fines"
     },
     {
         id:8,
@@ -69,7 +85,9 @@ const products = [
         price: 399.00,
         pictureUrl: "Adhesivo_zapatillas_9grs_Eccole.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pegamentos",
+        subCategory:"A fines"
     },
     {
         id:9,
@@ -78,7 +96,9 @@ const products = [
         price: 249.00,
         pictureUrl: "Agua_5lts_desmineralizada.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Aditivos",
+        subCategory:"Agua"
     },
     {
         id:10,
@@ -87,7 +107,9 @@ const products = [
         price: 99.00,
         pictureUrl: "3M_cinta_de_enmascarara_18mmx40m.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Cintas",
+        subCategory:"Aislar"
     },
     {
         id:11,
@@ -96,7 +118,9 @@ const products = [
         price: 419.00,
         pictureUrl: "Cinta_Montaje_25mmx1.27M_3M_Scotch.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Cintas",
+        subCategory:"Montaje"
     },
     {
         id:12,
@@ -105,7 +129,9 @@ const products = [
         price: 239.00,
         pictureUrl: "Cinta_Scotch_Empaque_48mmx40m_3M.png",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Cintas",
+        subCategory:"Empaque"
     },
     {
         id:13,
@@ -114,7 +140,9 @@ const products = [
         price: 149.00,
         pictureUrl: "Cinta_Scotch_Empaque_Trans_24mmx50Mts.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Cintas",
+        subCategory:"Empaque"
     },
     {
         id:14,
@@ -123,7 +151,9 @@ const products = [
         price: 145.00,
         pictureUrl: "Clavos_Hierro_10x35_68uni.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Taller",
+        subCategory:"Fijaciones"
     },
     {
         id:15,
@@ -132,7 +162,9 @@ const products = [
         price: 79.00,
         pictureUrl: "Disco_Corte_Metal_115_1.6Mm.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Herramientas",
+        subCategory:"Accesorios"
     },
     {
         id:16,
@@ -141,7 +173,9 @@ const products = [
         price: 359.00,
         pictureUrl: "Enduido_Interior_1ltr_Andina.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pintureria",
+        subCategory:"Enduidos"
     },
     {
         id:17,
@@ -150,7 +184,9 @@ const products = [
         price: 14.000,
         pictureUrl: "Escalera_Articulada_12Escalones_alumin.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Escaleras",
+        subCategory:"Articulada"
     },
     {
         id:18,
@@ -159,7 +195,9 @@ const products = [
         price: 18.889,
         pictureUrl: "Escalera_Articulada_16Escalones_aluminio.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Escaleras",
+        subCategory:"Articulada"
     },
     {
         id:19,
@@ -168,7 +206,9 @@ const products = [
         price: 1.625,
         pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pintureria",
+        subCategory:"Pintura Esmalte"
     },
     {
         id:20,
@@ -177,7 +217,9 @@ const products = [
         price: 119,
         pictureUrl: "Mini_Rodillo_El_Galgo_Forrado_5Cm.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pintureria",
+        subCategory:"Rodillo"
     },
     {
         id:21,
@@ -186,7 +228,9 @@ const products = [
         price: 489,
         pictureUrl: "Lubricante_WD-40_aerosol_155grs.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Aerosol",
+        subCategory:"Lubricantes"
     },
     {
         id:22,
@@ -195,7 +239,9 @@ const products = [
         price: 189,
         pictureUrl: "Pegamento_en_gel_2ml_la_gotita.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pegamentos",
+        subCategory:"A fines"
     },
     {
         id:23,
@@ -204,7 +250,9 @@ const products = [
         price: 97,
         pictureUrl: "Pegamento_inst_2grs_pegamil.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pegamentos",
+        subCategory:"A fines"
     },
     {
         id:24,
@@ -213,7 +261,9 @@ const products = [
         price: 155,
         pictureUrl: "Pegamento_la_gotita_2ml.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pegamentos",
+        subCategory:"A fines"
     },
     {
         id:25,
@@ -222,7 +272,9 @@ const products = [
         price: 130,
         pictureUrl: "Pincel_nro10_home.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pintureria",
+        subCategory:"Pinceles"
     },
     {
         id:26,
@@ -231,7 +283,9 @@ const products = [
         price: 199,
         pictureUrl: "Pincel_persianero_cerda_gris.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pintureria",
+        subCategory:"Pinceles"
     },
     {
         id:27,
@@ -240,7 +294,9 @@ const products = [
         price: 410,
         pictureUrl: "Poxipol_10_Minutos_Transp.1Un.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pegamentos",
+        subCategory:"A fines"
     },
     {
         id:28,
@@ -249,7 +305,9 @@ const products = [
         price: 295,
         pictureUrl: "Poxiran_0.25M.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pegamentos",
+        subCategory:"A fines"
     },
     {
         id:29,
@@ -258,7 +316,9 @@ const products = [
         price: 569,
         pictureUrl: "Set_pinceles_3uni_top_home.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pintureria",
+        subCategory:"Pinceles"
     },
     {
         id:30,
@@ -267,7 +327,9 @@ const products = [
         price: 145,
         pictureUrl: "Tarugos_Plasticos_8Mm_25unid.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Taller",
+        subCategory:"Fijaciones"
     },
     {
         id:31,
@@ -276,7 +338,9 @@ const products = [
         price: 845,
         pictureUrl: "Simteplast_1lt.jpg",
         offer: true,
-        stock: 10
+        stock: 10,
+        category:"Pintureria",
+        subCategory:"Cielorraso"
     }
 ];
 
