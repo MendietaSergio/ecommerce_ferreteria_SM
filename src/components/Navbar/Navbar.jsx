@@ -57,7 +57,6 @@ const NavbarHeader = () => {
                                         <>
                                         <div key={subCategory.id}  >
                                             <NavDropdown.Item  href={`/productos/${category.title}/${subCategory.title}`}>{subCategory.title}</NavDropdown.Item>
-                                            {console.log("subcategory: ", subCategory)}
                                         </div>
                                         </>
                                     ))}                                    

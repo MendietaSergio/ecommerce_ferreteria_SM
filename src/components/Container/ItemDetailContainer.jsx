@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from "react";
-import { getFetchUno } from "../../Util/getMock";
+import getFetch from "../../mocks/products";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 //tengo que pasar un producto
@@ -8,18 +8,28 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ( ) =>{
 
-    const {idproducts} = useParams();
-    const [product, setProduct] = useState({})
+    const {idProducts} = useParams();
+    const [product, setProduct] = useState([])
+    const [detailProduct, setDetailProduct] = useState([])
     useEffect(() =>{
-        getFetchUno
-        .then(res => setProduct(res))
-        .catch(error=>console.log(error))
-    },[])
-    console.log(idproducts);
+        if(idProducts){
+            getFetch
+            .then(respuesta => {
+                setDetailProduct(respuesta.filter(detail => detail.id ==idProducts))
+            })
+            
+            .catch(error=>console.log(error))
+        }
+    },[idProducts])
     return (
         <>
-        <h2 className="text-center m-5">ItemDetailContainer</h2>
-        <ItemDetail product={product}/>
+        {/* MOSTRAR DETALLE LISTO */}
+        {/* PREGUNTAR POR QUE SE ME GUARDA EN UN OBJETO Y COMO HACER PARA QUE SE GUARDE EN UN ARRAY PARA NO USAR UN MAP */}
+        {detailProduct.map(detail => (
+            <div key={detail.id}>
+                <ItemDetail detail={detail}/>
+            </div>
+        ))}
         </>
     )
 
