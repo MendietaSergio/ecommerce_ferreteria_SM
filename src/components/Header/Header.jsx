@@ -15,7 +15,7 @@ const NavBar = () => {
                                     <span>tel: 123456789</span>
                                 </div>
                                 <div className="col contact">
-                                    <span>Email:ferredelbarrio@gmail.com</span>
+                                    <span>Email: ferredelbarrio@gmail.com</span>
                                 </div>
                                 <div className="col buscador my-3">
                                     <Search className="buscador  justify-content-end d-flex"/>
