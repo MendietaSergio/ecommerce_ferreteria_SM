@@ -51,6 +51,19 @@ button.btn-menu i{
 .menu a:hover{
     color:silver;
 }
+.dropdown-menu.show{
+    background-color:#1d82d3 !important;
+}
+.nav-link{
+    padding: 10px 0 !important;
+}
+
+.divmenu2>.nav-item>.dropdown-menu.show {
+    position: absolute !important;
+    left: 180px !important;
+    top:-48px !important;
+}
+
 @media screen and (min-width: 992px){
     button.btn-menu{
         display: none;

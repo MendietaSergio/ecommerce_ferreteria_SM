@@ -229,8 +229,8 @@ const products = [
         pictureUrl: "Lubricante_WD-40_aerosol_155grs.jpg",
         offer: true,
         stock: 10,
-        category:"Aerosol",
-        subCategory:"Lubricantes"
+        category:"Taller",
+        subCategory:"Aerosol"
     },
     {
         id:22,
@@ -351,4 +351,4 @@ const getFetch = new Promise((res)=>{
             res(products)
         }, 2000)    
 })
-export default getFetch
+export default getFetch;
