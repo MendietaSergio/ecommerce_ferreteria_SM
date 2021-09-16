@@ -42,7 +42,7 @@ const ItemDetail =({detail}) =>{
                     </div>
                     <div className="detail-title">
                         <div className="row">
-                            <div className="d-flex justift-content-center ">
+                            <div className="cart d-flex justift-content-center ">
                                 <span className="cart">Carrito:</span>
                                 <div className="btn btn-primary">
                                     <span onClick={()=>SubtrationCart()}>-</span>
