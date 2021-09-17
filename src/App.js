@@ -34,7 +34,7 @@ function App() {
         <Route path="/contacto" exact>
           <Contact/>
         </Route>
-        <Route path="/login" exact>
+        <Route path="/ingresar" exact>
           <Signin/>
         </Route>
         <Route path="/carrito" exact>
