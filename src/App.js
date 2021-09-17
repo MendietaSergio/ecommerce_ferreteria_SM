@@ -10,8 +10,7 @@ import ContainerCart from './components/ContainerCart/ContainerCart';
 import Detail from './pages/Detail';
 
 function App() {
-//route me permite asociar una ruta con un componente.
-//averiguar como pasar el id del producto seleccionado
+
   return (
     <BrowserRouter>
       <Header />
