@@ -8,16 +8,17 @@ const Item = ({product}) =>{
     return(
         <>
             <div key={product.id} className="card mt-2" >
-            <img className="card-img-top" src={`/assets/img/Productos/${product.pictureUrl}`} alt={product.title}/>
-                <div className="card-body">
-                <h5 className="card-title">{product.title}</h5>
-                </div>
-                <div className="card-footer ">
-                <p className="price">Precio ${product.price},00</p>
-                <Button text="Agregar al carrito"></Button>
-                <Link to={`/detalle/${product.id}`}>
-                <Button text="Detalle"  className="btn btn-dark" />
+                <Link className="card-footer-detail" to={`/detalle/${product.id}`}>
+                    <img className="card-img-top" src={`/assets/img/Productos/${product.pictureUrl}`} alt={product.title}/>
+                    <div className="card-body">
+                        <h5 className="card-title">{product.title}</h5>
+                    </div>        
                 </Link>
+                <div className="card-footer ">
+                    <div className="row">
+                    <span className="price text-center">Precio ${product.price},00</span>
+                    <Button className="d-block btn btn-primary" text="Agregar al carrito"></Button>
+                    </div>
                 </div>
            </div>
         </>
