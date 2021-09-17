@@ -17,3 +17,11 @@
 .card-body{
     padding-bottom: 0;
 }
+.card-footer-detail{
+    text-decoration: none;
+    margin: 0 auto;
+    color: black;
+}
+.card-footer>.btn{
+    display: block;
+}
