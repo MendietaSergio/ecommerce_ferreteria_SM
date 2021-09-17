@@ -12,7 +12,7 @@ import Detail from './pages/Detail';
 function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header />
       <Switch>
         <div className="container">
