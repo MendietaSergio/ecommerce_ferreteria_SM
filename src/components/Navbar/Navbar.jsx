@@ -71,7 +71,9 @@ const NavbarHeader = () => {
                     </NavDropdown>
                     <Link to="/contacto" onClick={closeNav}>Contacto</Link>
                     {show ? 
-                    (<Button to="/ingresar" className="btn d-block btn-secondary" text="Iniciar Sesión"/>)
+                    (<Link to="/ingresar" onClick={closeNav}>
+                        <Button  className="btn d-block btn-secondary" text="Iniciar Sesión"/>
+                    </Link>)
                 : null}
                 </>
                 <div className="flex-grow-1 d-flex justify-content-end">
