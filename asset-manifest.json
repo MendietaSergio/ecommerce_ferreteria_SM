@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/ecommerce_ferreteria_SM/static/css/main.007ad9f0.chunk.css",
-    "main.js": "/ecommerce_ferreteria_SM/static/js/main.82cc9ec9.chunk.js",
-    "main.js.map": "/ecommerce_ferreteria_SM/static/js/main.82cc9ec9.chunk.js.map",
-    "runtime-main.js": "/ecommerce_ferreteria_SM/static/js/runtime-main.7570e5e4.js",
-    "runtime-main.js.map": "/ecommerce_ferreteria_SM/static/js/runtime-main.7570e5e4.js.map",
-    "static/js/2.bfd49c76.chunk.js": "/ecommerce_ferreteria_SM/static/js/2.bfd49c76.chunk.js",
-    "static/js/2.bfd49c76.chunk.js.map": "/ecommerce_ferreteria_SM/static/js/2.bfd49c76.chunk.js.map",
-    "index.html": "/ecommerce_ferreteria_SM/index.html",
-    "static/css/main.007ad9f0.chunk.css.map": "/ecommerce_ferreteria_SM/static/css/main.007ad9f0.chunk.css.map",
-    "static/js/2.bfd49c76.chunk.js.LICENSE.txt": "/ecommerce_ferreteria_SM/static/js/2.bfd49c76.chunk.js.LICENSE.txt",
-    "static/media/Logo.c7272ca8.png": "/ecommerce_ferreteria_SM/static/media/Logo.c7272ca8.png"
+    "main.css": "/MendietaSergio/ecommerce_ferreteria_SM/static/css/main.007ad9f0.chunk.css",
+    "main.js": "/MendietaSergio/ecommerce_ferreteria_SM/static/js/main.c8c6634b.chunk.js",
+    "main.js.map": "/MendietaSergio/ecommerce_ferreteria_SM/static/js/main.c8c6634b.chunk.js.map",
+    "runtime-main.js": "/MendietaSergio/ecommerce_ferreteria_SM/static/js/runtime-main.ba102a6e.js",
+    "runtime-main.js.map": "/MendietaSergio/ecommerce_ferreteria_SM/static/js/runtime-main.ba102a6e.js.map",
+    "static/js/2.bfd49c76.chunk.js": "/MendietaSergio/ecommerce_ferreteria_SM/static/js/2.bfd49c76.chunk.js",
+    "static/js/2.bfd49c76.chunk.js.map": "/MendietaSergio/ecommerce_ferreteria_SM/static/js/2.bfd49c76.chunk.js.map",
+    "index.html": "/MendietaSergio/ecommerce_ferreteria_SM/index.html",
+    "static/css/main.007ad9f0.chunk.css.map": "/MendietaSergio/ecommerce_ferreteria_SM/static/css/main.007ad9f0.chunk.css.map",
+    "static/js/2.bfd49c76.chunk.js.LICENSE.txt": "/MendietaSergio/ecommerce_ferreteria_SM/static/js/2.bfd49c76.chunk.js.LICENSE.txt",
+    "static/media/Logo.c7272ca8.png": "/MendietaSergio/ecommerce_ferreteria_SM/static/media/Logo.c7272ca8.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7570e5e4.js",
+    "static/js/runtime-main.ba102a6e.js",
     "static/js/2.bfd49c76.chunk.js",
     "static/css/main.007ad9f0.chunk.css",
-    "static/js/main.82cc9ec9.chunk.js"
+    "static/js/main.c8c6634b.chunk.js"
   ]
 }
