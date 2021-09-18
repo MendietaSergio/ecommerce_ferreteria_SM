@@ -12,7 +12,7 @@ import Detail from './pages/Detail';
 function App() {
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter >
       <Header />
       <Switch>
         <div className="container">
@@ -26,6 +26,9 @@ function App() {
           <Products/>
         </Route>
         <Route path="/productos/:idCategory/:idSubCategory" exact>
+          <Products/>
+        </Route>
+        <Route path="/search" exact>
           <Products/>
         </Route>
         <Route path="/detalle/:idProducts" exact>
