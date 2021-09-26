@@ -51,8 +51,6 @@ const ItemListContainer = ({ mensaje}) => {
             }
         }
         fetProducts()
-        {console.log(idCategory)}
-        {console.log(idSubCategory)}
     },[idCategory])
     
     return (

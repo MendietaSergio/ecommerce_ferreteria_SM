@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../Button/Button";
 import "./ContainerCart.css";
 import { CartContextUse } from "../../Context/CartContext";
@@ -6,13 +6,16 @@ import CartEmpty from "../../images/carritoVacio.png";
 import { Link } from "react-router-dom";
 const ContainerCart = () => {
   const { clear, removeItem, cart } = CartContextUse();
-
-  console.log("largo del carrito: ", cart.length);
-
-  const AmountCart =() =>{
-
-  }
-
+  const [ priceTotal, setPriceTotal ] = useState(0);
+  useEffect(() => {
+      let sumTotal=0
+      cart.map(element => {
+          sumTotal+=element.item.price*element.quantity;
+        setPriceTotal(sumTotal)
+      })
+      console.log(priceTotal);
+  },)
+  console.log("Precio total: ",priceTotal);
   return (
     <>
       <div className="col shadow my-5">
@@ -60,9 +63,10 @@ const ContainerCart = () => {
                     </div>
                     <div className="col text-center">
                       <h5>TOTAL</h5>
-                      <span>${element.item.price*element.quantity}</span>
+                      
+                      <span>${element.item.price*element.quantity},00</span>
                       <br />
-                      <i class="far fa-trash-alt"></i>
+                      <i class="far fa-trash-alt" onClick={()=>removeItem(element.item.id)}></i>
                     </div>
                   </div>
                   <hr />
@@ -71,18 +75,19 @@ const ContainerCart = () => {
             ))}
             <div className="row">
               <div className="col">
-                <h4 className="sub-amount">Subtotal: $123123</h4>
+                <h4 className="sub-amount">Subtotal: ${priceTotal}</h4>
               </div>
             </div>
             <div className="row">
               <div className="col d-flex justify-content-end mx-5 mb-5">
-                <Button className="btn btn-danger mx-2" text="Cancelar todo" />
+                <Button className="btn btn-danger mx-2" text="Cancelar todo" onClick={()=>clear()}/>
                 <Button
                   className="btn btn-success mx-2"
                   text="Confirmar compra"
                 />
               </div>
             </div>
+
           </>
         )}
       </div>
