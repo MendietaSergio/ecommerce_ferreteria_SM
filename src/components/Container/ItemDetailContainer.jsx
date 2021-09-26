@@ -14,7 +14,7 @@ const ItemDetailContainer = ( ) =>{
         if(idProducts){
             getFetch
             .then(respuesta => {
-                setDetailProduct(respuesta.filter(detail => detail.title ===idProducts))
+                setDetailProduct(respuesta.find(detail => detail.title ===idProducts))
                 setLoading(false)
             })
             .catch(error=>console.log(error))
@@ -30,11 +30,8 @@ const ItemDetailContainer = ( ) =>{
                 <h2 className="text-center my-4">Cargando <i className="fas fa-spinner fa-pulse" /></h2>
                 </>
                 ):(
-                    detailProduct.map(detail => (
-                        <div key={detail.id}>
-                            <ItemDetail detail={detail}/>
-                        </div>
-                )))}
+                    <ItemDetail detail={detailProduct}/>
+                )}
         </>
     )
 }

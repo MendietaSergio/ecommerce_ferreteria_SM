@@ -1,25 +1,12 @@
 import React, { useState } from "react";
 import {Link} from "react-router-dom"
-import Button from "../Button/Button"
+import { ItemCount } from "./ItemCount";
 import "./ItemDetail.css"
 
 const ItemDetail =({detail}) =>{
 
-
-    const [countCart,setCountCart] = useState(1);
     const [amount, setAmount] = useState(detail.price)
 
-    const SumCart =() =>{
-        setCountCart(countCart+1)
-        setAmount(amount+detail.price)
-    }
-    const SubtrationCart =() =>{
-        if(countCart!=1){
-            setCountCart(countCart-1)
-            setAmount(amount-detail.price)
-                {console.log(amount)}
-        }
-    }
     return(
         <>
         {console.log(amount)}
@@ -43,18 +30,8 @@ const ItemDetail =({detail}) =>{
                     <div className="detail-title">
                         <div className="row">
                             <div className="cart d-flex justift-content-center ">
-                                <span className="cart">Carrito:</span>
-                                <div className="btn btn-primary">
-                                    <span onClick={()=>SubtrationCart()}>-</span>
-                                </div>
-                                <div className="btn">
-                                    <span>{countCart}</span>
-                                </div>
-                                <div className="btn btn-primary">
-                                    <span onClick={()=>SumCart()}>+</span>
-                                </div>
+                                <ItemCount price={detail.price} />
                             </div>
-                            {countCart>1 ? (<span className="mt-3">Precio ${amount},00 por {countCart} unid.</span>) :null}
                         </div>
                     </div>
                     <div className="detail-title">
