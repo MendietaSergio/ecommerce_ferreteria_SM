@@ -9,6 +9,10 @@ const ContainerCart = () => {
 
   console.log("largo del carrito: ", cart.length);
 
+  const AmountCart =() =>{
+
+  }
+
   return (
     <>
       <div className="col shadow my-5">
@@ -56,7 +60,7 @@ const ContainerCart = () => {
                     </div>
                     <div className="col text-center">
                       <h5>TOTAL</h5>
-                      <span>$</span>
+                      <span>${element.item.price*element.quantity}</span>
                       <br />
                       <i class="far fa-trash-alt"></i>
                     </div>
