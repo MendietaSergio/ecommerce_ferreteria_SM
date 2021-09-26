@@ -5,11 +5,9 @@ import "./ItemDetail.css"
 
 const ItemDetail =({detail}) =>{
 
-    const [amount, setAmount] = useState(detail.price)
 
     return(
         <>
-        {console.log(amount)}
             <h5 className="text-center mt-5 mb-5">{detail.title}</h5>
             <span className="link-page">
                 <Link to="/">Home<i class="fas fa-chevron-right"></i></Link>
@@ -30,7 +28,7 @@ const ItemDetail =({detail}) =>{
                     <div className="detail-title">
                         <div className="row">
                             <div className="cart d-flex justift-content-center ">
-                                <ItemCount price={detail.price} />
+                                <ItemCount detail={detail} />
                             </div>
                         </div>
                     </div>

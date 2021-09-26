@@ -2,26 +2,29 @@ import { useState } from "react";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import "./ItemCount.css";
-export const ItemCount = ({price}) => {
-  const [amount, setAmount] = useState(price);
+import { CartContextUse } from "../../Context/CartContext";
+export const ItemCount = ({detail}) => {
+  const [amount, setAmount] = useState(detail.price);
   const [count, setCount] = useState(1);
   const [cambiarBtn, setCambiarBtn] = useState(true);
+  const {addItem } = CartContextUse()
 
   const SumCart = () => {
     setCount(count + 1);
-    setAmount(amount + price);
+    setAmount(amount + detail.price);
   };
   const SubtrationCart = () => {
     if (count != 1) {
       setCount(count - 1);
-      setAmount(amount - price);
+      setAmount(amount - detail.price);
     }
   };
   const onAdd = (count) => {
+    addItem(detail, count)
     setCambiarBtn(false);
     console.log("Cantidad del producto seleccionado: ",count);
   };
-  console.log();
+  
   return (
     <>
       <div className="detail-title">
@@ -48,9 +51,7 @@ export const ItemCount = ({price}) => {
           {cambiarBtn ? (
             <Button text="Agregar al carrito" onClick={() => onAdd(count)}/>
           ) : (
-            <Link to="/carrito">
-              <Button text="Terminar compra" />
-            </Link>
+              <Button to="/carrito" text="Terminar compra" />
           )}
         </div>
       </div>
