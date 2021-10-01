@@ -17,17 +17,18 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig)
 
 
+//exporto la base de datos.
 
-export function getFirebase(){
+export const getFirebase = () => {
     return app
 }
 
-
-export function getFirestore(){
+//exporto par usarlo en cualquier componente.
+export const getFirestore = () =>{
     
     return firebase.firestore(app)
 }
 
 
-
+//  {getFirebase, getFirestore}
 
