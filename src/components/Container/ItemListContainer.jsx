@@ -1,6 +1,7 @@
 import React,{ useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import getFetch from "../../mocks/products";
+// import getFetch from "../../mocks/products";
+import { getFirestore } from "../../services/getFirebase";
 import { useParams } from "react-router";
 
 
@@ -11,43 +12,53 @@ const ItemListContainer = ({ mensaje}) => {
     const {idCategory} = useParams();
     const {idSubCategory} = useParams();
     useEffect (() =>{
-        const fetProducts = async() =>{
-            if(idCategory){
-               await getFetch
+        const dbQuery = getFirestore()
 
-               .then(respuesta =>{
-                   setProducts(respuesta.filter(idcategory =>idcategory.category === idCategory))
-                   setLoading(false) 
-                })
-                .catch(error=>{
-                    console.log(error);
-                })
-                .finally(() =>setLoading(false))
-                    if(idSubCategory){
-                        await getFetch
-                        .then(respuesta =>{
-                            setProducts(respuesta.filter(idsubcategory =>idsubcategory.subCategory === idSubCategory))
-                            setLoading(false)  
-                        })
-                        .catch(error=>{
-                            console.log(error);
-                        })
-                        .finally(() =>setLoading(false))
-                    }
-            }else{
-                await getFetch
+        dbQuery.collection('items').get()//llamo a todos los datos que tiene la coleccion 'items'
+            .then( resp =>{
+                setProducts(resp.docs.map(item => ({id: item.id, ...item.data()})))
+            })
+            .catch(err => console.log("ERROR => ",err))
+            .finally(()=> setLoading(false))
+        // const fetProducts = async() =>{
 
-               .then(respuesta =>{
-                   setProducts(respuesta)
-                   setLoading(false)  
-                })
-                .catch(error=>{
-                    console.log(error);
-                })
-                .finally(() =>setLoading(false))
-            }
-        }
-        fetProducts()
+
+        //     if(idCategory){
+        //        await getFetch
+
+        //        .then(respuesta =>{
+        //            setProducts(respuesta.filter(idcategory =>idcategory.category === idCategory))
+        //            setLoading(false) 
+        //         })
+        //         .catch(error=>{
+        //             console.log(error);
+        //         })
+        //         .finally(() =>setLoading(false))
+        //             if(idSubCategory){
+        //                 await getFetch
+        //                 .then(respuesta =>{
+        //                     setProducts(respuesta.filter(idsubcategory =>idsubcategory.subCategory === idSubCategory))
+        //                     setLoading(false)  
+        //                 })
+        //                 .catch(error=>{
+        //                     console.log(error);
+        //                 })
+        //                 .finally(() =>setLoading(false))
+        //             }
+        //     }else{
+        //         await getFetch
+
+        //        .then(respuesta =>{
+        //            setProducts(respuesta)
+        //            setLoading(false)  
+        //         })
+        //         .catch(error=>{
+        //             console.log(error);
+        //         })
+        //         .finally(() =>setLoading(false))
+        //     }
+        // }
+        // fetProducts()
     },[idCategory])
     
     return (

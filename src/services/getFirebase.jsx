@@ -1,0 +1,33 @@
+import firebase from "firebase"
+import 'firebase/firestore'
+
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyA0fzm4IF3-wMurT-hP8ff5jfRTNVPECZA",
+    authDomain: "ecommerce-ferreteria.firebaseapp.com",
+    projectId: "ecommerce-ferreteria",
+    storageBucket: "ecommerce-ferreteria.appspot.com",
+    messagingSenderId: "452286409016",
+    appId: "1:452286409016:web:1eb36ffd0fa58268e979cd"
+  };
+  
+// Initialize Firebase
+
+const app = firebase.initializeApp(firebaseConfig)
+
+
+
+export function getFirebase(){
+    return app
+}
+
+
+export function getFirestore(){
+    
+    return firebase.firestore(app)
+}
+
+
+
+
