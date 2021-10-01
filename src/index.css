@@ -12,3 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* rutas */
+.link-page>a{
+  text-decoration: none !important;
+  font-size: 14px;
+}
+.link-page>a>i{
+  font-size: 8px;
+  padding: 2px;
+}

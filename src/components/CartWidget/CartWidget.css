@@ -1,0 +1,30 @@
+.carrito-lg{
+    padding: 0 !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+    display: flex;
+}
+.fa-shopping-cart{
+    position: relative;
+}
+.cart_num{
+    position: absolute;
+    top: 14px;
+    left: none;
+    background: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2px;
+}
+@media screen and (min-width: 992px){
+    .cart_num{
+        position: absolute;
+        top: 80px;
+        background: red;
+    }
+}

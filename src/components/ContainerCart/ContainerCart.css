@@ -9,8 +9,9 @@ hr{
    display: flex;
     width: 80% !important;
 }
-input{
-    width: 20% !important;
+.input-cart{
+    width: 25% !important;
+    text-align: right !important;
 }
 .sub-amount{
     text-align: right;

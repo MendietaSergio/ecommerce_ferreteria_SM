@@ -32,9 +32,12 @@ export const  CartContextProvider = ({children}) => {
         const cartFilter = cart.filter(element => element.item.id !== id)
         setCart(cartFilter)
     }
+    const iconCart =() =>{
+        return cart.reduce((acum, valor)=> acum + valor.quantity,0)
+    }
     console.log("carrito: ",cart);
     return(
-        <CartContext.Provider value = {{cart, addItem, clear, removeItem}}>
+        <CartContext.Provider value = {{cart, addItem, clear, removeItem, iconCart}}>
             {children}
         </CartContext.Provider>
     )

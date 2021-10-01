@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button/Button"
 import "./FormContact.css"
 const FormContact =() =>{
-
+    // agregar value a los input
     return(
         <>
             <div>

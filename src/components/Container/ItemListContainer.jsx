@@ -9,7 +9,7 @@ const ItemListContainer = ({ mensaje}) => {
     const [ products, setProducts ] = useState([])
     const [ loading, setLoading ] = useState(true)
     const {idCategory} = useParams();
-    const {idSubCategory} = useParams()
+    const {idSubCategory} = useParams();
     useEffect (() =>{
         const fetProducts = async() =>{
             if(idCategory){
@@ -17,8 +17,7 @@ const ItemListContainer = ({ mensaje}) => {
 
                .then(respuesta =>{
                    setProducts(respuesta.filter(idcategory =>idcategory.category === idCategory))
-                   setLoading(false)
-                   console.log(respuesta);    
+                   setLoading(false) 
                 })
                 .catch(error=>{
                     console.log(error);
@@ -28,8 +27,7 @@ const ItemListContainer = ({ mensaje}) => {
                         await getFetch
                         .then(respuesta =>{
                             setProducts(respuesta.filter(idsubcategory =>idsubcategory.subCategory === idSubCategory))
-                            setLoading(false)
-                            console.log(respuesta);    
+                            setLoading(false)  
                         })
                         .catch(error=>{
                             console.log(error);
@@ -41,8 +39,7 @@ const ItemListContainer = ({ mensaje}) => {
 
                .then(respuesta =>{
                    setProducts(respuesta)
-                   setLoading(false)
-                   console.log(respuesta);    
+                   setLoading(false)  
                 })
                 .catch(error=>{
                     console.log(error);

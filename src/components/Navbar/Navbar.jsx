@@ -78,11 +78,14 @@ const NavbarHeader = () => {
                 </>
                 <div className="flex-grow-1 d-flex justify-content-end">
                     <div className="row ">
-                        <div className="col-10">
-                        {show ? null:(<Search />)}
+                        <div className="col-9">
+                        {/* poner estilos al buscador
+                        height: 37px;
+                        margin: 27px 0; */}
+                        {show ? null:(<Search  />)}
                         </div>
-                        <div className="col-2 p0">
-                        {show ? null:(<CartWidget/>)}
+                        <div className="col-3 d-flex justify-content-center">
+                        {show ? null:(<CartWidget />)}
                         </div>                       
                     </div>                  
                 </div>

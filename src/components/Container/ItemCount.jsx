@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
 import "./ItemCount.css";
 import { CartContextUse } from "../../Context/CartContext";
 export const ItemCount = ({detail}) => {
@@ -9,6 +8,14 @@ export const ItemCount = ({detail}) => {
   const [cambiarBtn, setCambiarBtn] = useState(true);
   const {addItem } = CartContextUse()
 
+  const [loading, setLoading] = useState(true)
+  useEffect(()=>{
+    if(loading){
+      setInterval(() => {
+        setLoading(false)
+      }, 2200);
+    }
+  },)
   const SumCart = () => {
     setCount(count + 1);
     setAmount(amount + detail.price);
@@ -35,7 +42,14 @@ export const ItemCount = ({detail}) => {
               <span onClick={() => SubtrationCart(count)}>-</span>
             </div>
             <div className="btn">
+              {loading ? 
+              (<>
+              <i className="fas fa-spinner fa-pulse" />
+              </> )
+              :
+              (<>
               <span>{count}</span>
+              </>)}
             </div>
             <div className="btn btn-primary">
               <span onClick={() => SumCart(count)}>+</span>

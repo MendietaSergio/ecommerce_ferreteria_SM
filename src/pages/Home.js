@@ -6,7 +6,7 @@ const Home = () =>{
     return (
         <>
         <div className="mt-3 mb-3 " >
-          <img src={imgPort} title="Portada" width="100%"/>
+          <img src={imgPort} title="Portada" alt="Portada" width="100%"/>
         </div>
           <ItemListContainer mensaje={"Productos"} />
         </>

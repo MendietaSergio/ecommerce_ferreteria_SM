@@ -13,9 +13,7 @@ const ContainerCart = () => {
           sumTotal+=element.item.price*element.quantity;
         setPriceTotal(sumTotal)
       })
-      console.log(priceTotal);
   },)
-  console.log("Precio total: ",priceTotal);
   return (
     <>
       <div className="col shadow my-5">
@@ -37,7 +35,6 @@ const ContainerCart = () => {
         ) : (
           <>
             {cart.map((element) => (
-              <>
                 <div key={element.id} className="row pb-4">
                   <div className="row my-3">
                     <div className="col">
@@ -50,7 +47,7 @@ const ContainerCart = () => {
                     <div className="col">
                       <div className="d-flex flex-column text-left">
                         <h5>{element.item.title}</h5>
-                        <a href="/">detalles</a>
+                        <Link to={`/detalle/${element.item.title}`}>Detalle</Link>
                       </div>
                     </div>
                     <div className="col text-center">
@@ -59,11 +56,10 @@ const ContainerCart = () => {
                     </div>
                     <div className="col text-center">
                       <h5>Cantidad</h5>
-                      <input type="number" value={element.quantity} />
+                      <input className="input-cart" value={element.quantity} type="number" min="1" max="10" />
                     </div>
                     <div className="col text-center">
-                      <h5>TOTAL</h5>
-                      
+                      <h5>TOTAL</h5>                      
                       <span>${element.item.price*element.quantity},00</span>
                       <br />
                       <i class="far fa-trash-alt" onClick={()=>removeItem(element.item.id)}></i>
@@ -71,7 +67,6 @@ const ContainerCart = () => {
                   </div>
                   <hr />
                 </div>
-              </>
             ))}
             <div className="row">
               <div className="col">
@@ -79,6 +74,13 @@ const ContainerCart = () => {
               </div>
             </div>
             <div className="row">
+              <div className="col d-flex justify-content-center mx-5 mb-5">
+              <Button
+                to="/productos"
+                  className="btn btn-primary mx-2"
+                  text="Seguir Comprando"
+                />
+              </div>
               <div className="col d-flex justify-content-end mx-5 mb-5">
                 <Button className="btn btn-danger mx-2" text="Cancelar todo" onClick={()=>clear()}/>
                 <Button
