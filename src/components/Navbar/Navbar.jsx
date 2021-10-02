@@ -4,26 +4,36 @@ import Logo from "../../images/Logo.png"
 import Button from "../Button/Button";
 import CartWidget from "../CartWidget/CartWidget";
 import Search from "../Search/Search";
-import getFetchCategory from "../../mocks/category"
-import getFetchSubCategory from "../../mocks/subCategory"
 import {NavDropdown} from "react-bootstrap"
 import "./Navbar.css"
+// import { getFirestore } from "../../services/getFirebase";
+import getFetchCategory from "../../mocks/category";
+import getFetchSubCategory from "../../mocks/subCategory";
 const NavbarHeader = () => {
     const [show, setShow] = useState(false);
     const handleShow = ( ) => setShow(!show);
     const closeNav = () => setShow(false);
+    
     const [listCategory, setListCategory] = useState([])
     const [subListCategory, setSubListCategory] = useState([])
-
+    //HACER MAPEO PARA EL MENU DE CATEGORIA Y SUBCATEGORIAS
     useEffect(()=>{    
-    const getCategory = async() =>{
-        await getFetchCategory
-        .then(res=>{
-            setListCategory(res)
-        })
-        .catch(error => console.log(error))
+        // const dbQuery = getFirestore()
+
+        const getCategory = async () =>{
+            await getFetchCategory
+            .then(res=>{
+                setListCategory(res)
+            })
+            .catch(error => console.log(error))
+        // dbQuery.collection('items').get()
+        // .then(resp=>{
+        //     setProducts(resp.docs.map(item => ({id: item.id, ...item.data()})))
+        //     console.log("productos  ", products);
+        // })
+        // .catch(error => console.log(error))
     }
-    const getSubCategory = async() =>{
+    const getSubCategory = async () =>{
         await getFetchSubCategory
         .then(res=>{
             setSubListCategory(res)
@@ -37,7 +47,7 @@ const NavbarHeader = () => {
         <>        
             <div className="logo">
                 <NavLink to="/" activeClassName="">
-                    <img src={Logo} onClick={closeNav}/>
+                    <img src={Logo} alt="Logo" onClick={closeNav}/>
                 </NavLink>
             </div>
             <button className="btn-menu" onClick={handleShow}>
@@ -53,7 +63,7 @@ const NavbarHeader = () => {
                             <> 
                             <div key={category.id} className="divmenu2">
                                 <NavDropdown title={category.title} id="basic-nav-dropdown">
-                                    {subListCategory.filter(subCategory=> subCategory.id_category == category.id).map(subCategory =>(
+                                    {subListCategory.filter(subCategory=> subCategory.id_category === category.id).map(subCategory =>(
                                         <>
                                         <div key={subCategory.id}  >
                                             <NavDropdown.Item  href={`/productos/${category.title}/${subCategory.title}`}>{subCategory.title}</NavDropdown.Item>
