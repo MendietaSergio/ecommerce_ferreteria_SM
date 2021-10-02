@@ -21,7 +21,7 @@ export const ItemCount = ({detail}) => {
     setAmount(amount + detail.price);
   };
   const SubtrationCart = () => {
-    if (count != 1) {
+    if (count !== 1) {
       setCount(count - 1);
       setAmount(amount - detail.price);
     }
