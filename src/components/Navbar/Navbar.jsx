@@ -6,9 +6,7 @@ import CartWidget from "../CartWidget/CartWidget";
 import Search from "../Search/Search";
 import {NavDropdown} from "react-bootstrap"
 import "./Navbar.css"
-// import { getFirestore } from "../../services/getFirebase";
-import getFetchCategory from "../../mocks/category";
-import getFetchSubCategory from "../../mocks/subCategory";
+import { getFirestore } from "../../services/getFirebase";
 const NavbarHeader = () => {
     const [show, setShow] = useState(false);
     const handleShow = ( ) => setShow(!show);
@@ -16,33 +14,29 @@ const NavbarHeader = () => {
     
     const [listCategory, setListCategory] = useState([])
     const [subListCategory, setSubListCategory] = useState([])
-    //HACER MAPEO PARA EL MENU DE CATEGORIA Y SUBCATEGORIAS
     useEffect(()=>{    
-        // const dbQuery = getFirestore()
+        const dbQuery = getFirestore()
 
         const getCategory = async () =>{
-            await getFetchCategory
-            .then(res=>{
-                setListCategory(res)
-            })
-            .catch(error => console.log(error))
-        // dbQuery.collection('items').get()
-        // .then(resp=>{
-        //     setProducts(resp.docs.map(item => ({id: item.id, ...item.data()})))
-        //     console.log("productos  ", products);
-        // })
-        // .catch(error => console.log(error))
-    }
-    const getSubCategory = async () =>{
-        await getFetchSubCategory
-        .then(res=>{
-            setSubListCategory(res)
+        await dbQuery.collection('category').get()
+        .then(resp=>{
+            setListCategory(resp.docs.map(item => ({id: item.id, ...item.data()})))
+            console.log("lista de category=> ", listCategory);
         })
         .catch(error => console.log(error))
-    }
-    getCategory()
-    getSubCategory()
-},[])
+        }
+        
+        const getSubCategory = async () =>{        
+        await dbQuery.collection('subCategory').get()
+            .then(resp=>{
+                setSubListCategory(resp.docs.map(item => ({id: item.id, ...item.data()})))
+                console.log("Lista de subcateogoria=> ",subListCategory);
+            })
+        }
+
+        getCategory()
+        getSubCategory()
+    },[])
     return (
         <>        
             <div className="logo">
@@ -60,21 +54,17 @@ const NavbarHeader = () => {
                     <Link to="/" onClick={closeNav}>Inicio</Link>
                     <NavDropdown title="Productos" id="basic-nav-dropdown">
                         {listCategory.map(category =>(
-                            <> 
                             <div key={category.id} className="divmenu2">
-                                <NavDropdown title={category.title} id="basic-nav-dropdown">
-                                    {subListCategory.filter(subCategory=> subCategory.id_category === category.id).map(subCategory =>(
-                                        <>
+                                <NavDropdown title={category.name} id="basic-nav-dropdown">
+                                    {subListCategory.filter(subCategory=> subCategory.name_category === category.name).map(subCategory =>(
                                         <div key={subCategory.id}  >
-                                            <NavDropdown.Item  href={`/productos/${category.title}/${subCategory.title}`}>{subCategory.title}</NavDropdown.Item>
+                                            <NavDropdown.Item  href={`/productos/${category.name}/${subCategory.name}`}>{subCategory.name}</NavDropdown.Item>
                                         </div>
-                                        </>
                                     ))}                                    
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item href={`/productos/${category.title}`}>Ver más</NavDropdown.Item>
+                                    <NavDropdown.Item href={`/productos/${category.name}`}>Ver más</NavDropdown.Item>
                                 </NavDropdown>
                             </div>
-                            </>
                         ))}                       
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="/productos">Ver más</NavDropdown.Item>
@@ -89,9 +79,6 @@ const NavbarHeader = () => {
                 <div className="flex-grow-1 d-flex justify-content-end">
                     <div className="row ">
                         <div className="col-9">
-                        {/* poner estilos al buscador
-                        height: 37px;
-                        margin: 27px 0; */}
                         {show ? null:(<Search  />)}
                         </div>
                         <div className="col-3 d-flex justify-content-center">
