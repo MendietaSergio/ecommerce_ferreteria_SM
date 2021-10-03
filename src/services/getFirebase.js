@@ -29,6 +29,5 @@ export const getFirestore = () =>{
     return firebase.firestore(app)
 }
 
-
-//  {getFirebase, getFirestore}
+//hacer funcion para devolver la fecha asi no tengo que importar en el carrito, 
 
