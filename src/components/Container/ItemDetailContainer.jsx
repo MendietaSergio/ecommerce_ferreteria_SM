@@ -3,8 +3,6 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../../services/getFirebase";
 
-//ver que pasa con con el envio del detalle del producto!!!
-
 
 
 const ItemDetailContainer = ( ) =>{
@@ -25,20 +23,15 @@ const ItemDetailContainer = ( ) =>{
         }
         filterProduct()
     },[idProduct])
-    console.log("detalle del produto: ", idProduct);
+
     return (
         <>
-        {
-    console.log("detalle del produto en return: ", idProduct)
-
-        }
         {loading ?
-                (<>
-                <h2 className="text-center my-4">Cargando <i className="fas fa-spinner fa-pulse" /></h2>
-                </>
-                ):(
-                    <ItemDetail detail={detailProduct}/>
-                )}
+        (<>
+            <h2 className="text-center my-4">Cargando <i className="fas fa-spinner fa-pulse" /></h2>
+        </>):(
+            <ItemDetail detail={detailProduct}/>
+        )}
         </>
     )
 }
