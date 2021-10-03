@@ -5,6 +5,8 @@ import "./ItemDetail.css"
 
 const ItemDetail =({detail}) =>{
 
+    //PASAR EL DETALLE DEL PRODUCTO A DETAIL
+    //PARA PODER USAR OTRO COMPONENTE POR EJEMPLO "PRODUCTOS SIMILARES"
 
     return(
         <>
