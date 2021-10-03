@@ -4,16 +4,76 @@ import "./ContainerCart.css";
 import { CartContextUse } from "../../Context/CartContext";
 import CartEmpty from "../../images/carritoVacio.png";
 import { Link } from "react-router-dom";
+import { getFirestore } from "../../services/getFirebase";
+//para el uso de la fecha de compra
+//importar funcion que devuelva la fecha
+import firebase from "firebase"
+import 'firebase/firestore'
+
 const ContainerCart = () => {
   const { clear, removeItem, cart } = CartContextUse();
   const [ priceTotal, setPriceTotal ] = useState(0);
+  const [ formData, setFormData ] = useState(initialData)
   useEffect(() => {
       let sumTotal=0
-      cart.map(element => {
-          sumTotal+=element.item.price*element.quantity;
-        setPriceTotal(sumTotal)
+      cart.map(element => (sumTotal+=element.item.price*element.quantity))
+      setPriceTotal(sumTotal)
+  },[])
+
+  const handleOnChange = (e) =>{
+    setFormData({
+      ...formData, //primero seteo lo que ya tiene
+      [e.target.name]:e.target.value//se guarda el valor del nombre de cada input
+     })
+     
+  }
+
+  const handleOnSubmit = (e) =>{
+    e.preventDefault()
+    let orden ={}
+
+    orden.date = firebase.firestore.Timestamp.fromDate( new Date())
+    orden.buyer = formData
+
+    orden.total = priceTotal;
+    orden.items = cart.map(cartItem =>{
+      
+      const id = cartItem.item.id;
+      const title = cartItem.item.title;
+      const price = cartItem.item.price* cartItem.quantity;
+
+      return {id, title, price}
+    })
+    const db = getFirestore()//ejecuto la conexión
+    //.add => si no esta la coleccion, crea uno con el nombre.
+    db.collection('orders').add(orden)//en orders se crea una orden con los datos de la compra.
+      .then(resp => console.log(resp))
+      .finally(()=>setFormData(initialData))
+    
+    //PARA ACTUALIZAR LOS DATOS DEL PRODUCTO
+    // db.collection('items').doc('FJuTpwpIMCz75wSOwopa').update({
+    //   stock:10
+    // })
+    //   .then(()=> alert('Se modifico el stock'))
+
+    //actualiza toods los item que estan en el lsitado de cart del CartContext
+    const itemsToUpdate = db.collection('items').where(firebase.firestore.FieldPath.documentId(),'in',cart.map(i=> i.item.id))
+    const batch = db.batch()
+
+    //por cada item restar del stock la cantidad de el carrito.
+    itemsToUpdate.get()//objetos del carrito
+      .then(collection =>{
+        collection.docs.forEach(docSnapshot =>{//recorro los productos del carrito
+          batch.update(docSnapshot.ref, {//actualizo y le paso un array con la comparacion del producto y resta
+            stock: docSnapshot.data().stock - cart.find(item => item.item.id === docSnapshot.id).quantity
+          })
+        })
+        batch.commit().then(res =>{
+          console.log("resultado de batch: ",res);
+        })
       })
-  },)
+
+  }
   return (
     <>
       <div className="col shadow my-5">
@@ -86,10 +146,25 @@ const ContainerCart = () => {
                 <Button
                   className="btn btn-success mx-2"
                   text="Confirmar compra"
+                  onClick={handleOnSubmit}
                 />
               </div>
             </div>
-
+            {/* HACERLO EN OTRO COMPONENTE */}
+              <div>
+                <form
+                  onSubmit={handleOnSubmit}
+                  onChange={handleOnChange}>
+                  <input type="text" name="name" value={formData.name} />
+                  <input type="text" name="tel" value={formData.tel} />
+                  <input type="text" name="email" value={formData.email} />
+                  <Button
+                  className="btn btn-success mx-2"
+                  text="Confirmar compra del form"
+                  onClick={handleOnSubmit}
+                />
+                </form>
+              </div>
           </>
         )}
       </div>
@@ -97,4 +172,9 @@ const ContainerCart = () => {
   );
 };
 
+const initialData = {
+  name:'',
+  tel:"",
+  email: ""
+}
 export default ContainerCart;
