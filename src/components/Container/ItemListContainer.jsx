@@ -1,6 +1,5 @@
 import React,{ useEffect, useState } from "react";
 import ItemList from "./ItemList";
-// import getFetch from "../../mocks/products";
 import { getFirestore } from '../../services/getFirebase'
 import { useParams } from "react-router";
 
@@ -13,6 +12,7 @@ const ItemListContainer = ({ mensaje}) => {
     const {idSubCategory} = useParams();
     useEffect (() =>{
         const dbQuery = getFirestore()
+        // const dbQueryFilter HACER CONDICIONAL 
         const fetProducts = async() =>{
             if(idCategory){
                 //aca hago algo con el parametro de idCategory
@@ -41,7 +41,7 @@ const ItemListContainer = ({ mensaje}) => {
             }
         }
         fetProducts()
-    },[idCategory])
+    },[idCategory, idSubCategory])
     
     return (
         <>
