@@ -18,7 +18,7 @@ const ContainerCart = () => {
       let sumTotal=0
       cart.map(element => (sumTotal+=element.item.price*element.quantity))
       setPriceTotal(sumTotal)
-  },[])
+  },[cart])
 
   const handleOnChange = (e) =>{
     setFormData({
