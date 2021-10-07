@@ -1,0 +1,41 @@
+.slider{
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+.slider{
+    width: 100%;
+    object-fit: cover;
+    scroll-snap-align: center;
+}
+.card{
+    width: 16rem;
+    margin: 10px;
+    height: 200px;
+
+}
+.card-img-top{
+    height: 150px;
+    padding-top: 5px;
+    margin: 0 auto;
+}
+.price{
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 10px;
+}
+.card-title{
+    font-size: 1.1rem; 
+}
+.card-footer-detail{
+    text-decoration: none;
+    margin: 0 auto;
+    color: black;
+}
+.title-products-home{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
