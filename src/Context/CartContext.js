@@ -17,6 +17,7 @@ export const  CartContextProvider = ({children}) => {
                 if(element.item.id === item.id){
                     element.quantity = element.quantity + quantity
                 }
+                return element;
             })
             setCart(updateQty)
         } else {
