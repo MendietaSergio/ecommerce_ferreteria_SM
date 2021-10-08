@@ -1,0 +1,12 @@
+.cart>.btn{
+    display: flex;
+}
+
+.detail-title{
+    text-align: start;
+    padding: 15px 0;
+}
+.detail-title .cart{
+    margin-right: 10px;
+    margin-top: 4px;
+}
