@@ -5,6 +5,9 @@
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
 }
+.slider::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(left, rgb(204, 0, 0), rgb(140, 3, 3));
+}
 .slider{
     width: 100%;
     object-fit: cover;
@@ -13,8 +16,11 @@
 .card{
     width: 16rem;
     margin: 10px;
-    height: 200px;
-
+    height: 250px;
+    overflow: hidden;
+}
+.card-body{
+    height: 60px;
 }
 .card-img-top{
     height: 150px;
@@ -29,7 +35,7 @@
 .card-title{
     font-size: 1.1rem; 
 }
-.card-footer-detail{
+.card-link-detail{
     text-decoration: none;
     margin: 0 auto;
     color: black;
@@ -38,4 +44,16 @@
     text-decoration: none;
     color: black;
     cursor: pointer;
+}
+.card-title-offer{
+    
+    color: darkgreen;
+}
+.card-footer{
+    height: 100px;
+    margin: 0 auto;
+    background-color: none;
+}
+.card-footer>{
+    display: inline-flex;
 }
