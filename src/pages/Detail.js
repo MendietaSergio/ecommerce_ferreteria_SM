@@ -6,7 +6,9 @@ import ItemDetailContainer from "../components/Container/ItemDetailContainer/Ite
 const Detail =( )=>{
         return(
             <>
+            <div className="container-body-detail">
                 <ItemDetailContainer/>
+            </div>
             </>
         )
 } 

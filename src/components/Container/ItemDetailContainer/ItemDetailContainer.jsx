@@ -27,9 +27,11 @@ const ItemDetailContainer = ( ) =>{
     return (
         <>
         {loading ?
-        (<>
+        (
+            <div className="detail-loading">        
             <h2 className="text-center my-4">Cargando <i className="fas fa-spinner fa-pulse" /></h2>
-        </>):(
+            </div>
+        ):(
             <ItemDetail detail={detailProduct}/>
         )}
         </>

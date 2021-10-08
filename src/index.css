@@ -18,6 +18,12 @@ code {
 .container-body-pages{
   height: 600px;
 }
+.detail-loading{
+  height: 800px;
+}
+.container-body-detail{
+  height: auto;
+}
 /* rutas */
 .link-page>a{
   text-decoration: none !important;

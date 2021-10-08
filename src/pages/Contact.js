@@ -6,6 +6,7 @@ import Location from "../components/Contact/Location";
 const Contact = () =>{
     return (
         <>
+        <div className="container-body-pages">
             <h1 className="text-center m-5">Contacto</h1>
             <div className="row">
                 <div className="col-lg-6 ">
@@ -15,6 +16,7 @@ const Contact = () =>{
                     <FormContact/>
                 </div>
             </div>
+        </div>
         </>
     )
 }
