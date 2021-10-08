@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import Item from "../Item/Item";
 import { Accordion } from "react-bootstrap";
 import { getFirestore } from "../../../services/getFirebase";
-
+import "./ItemList.css"
 const ItemList = ({ 
   products,
 }) => {
@@ -41,7 +41,7 @@ const ItemList = ({
               <Accordion.Body>
                 <ul>
                   {listCategory.map(category => (
-                    <li  key={category.id}>
+                    <li  key={category.id} className="list-filter">
                       <Link to={`/productos/${category.name}`} >{category.name}</Link>
                     </li>
                   ))}
@@ -51,9 +51,9 @@ const ItemList = ({
             <Accordion.Item eventKey="1">
               <Accordion.Header>Subcategorias</Accordion.Header>
               <Accordion.Body>
-                <ul>
+                <ul >
                 {subListCategory.map(subCategory => (
-                    <li key={subCategory.id}>
+                    <li key={subCategory.id} className="list-filter">
                       <Link to={`/productos/${subCategory.name_category}/${subCategory.name}`} >{subCategory.name}</Link>
                       </li>
                   ))}
