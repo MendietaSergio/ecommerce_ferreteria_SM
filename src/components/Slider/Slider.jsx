@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Title from "../Title/Title";
 const Slider = ({
     title,
+    to,
     productFeatured=false,
     productOffer= false,
     productEquals=false,
@@ -52,7 +53,7 @@ const Slider = ({
         <>
         <div className="row">
             <div className="container">
-                <Link className="title-products-home" to="/productos"><Title className="my-3" text={title}/></Link>
+                <Link className="title-products-home" to={to ? to : null}><Title className="my-3" text={title}/></Link>
                 <div className="col-12">
                     <section className="slider ">
                         {products.map((product) => (
