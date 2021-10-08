@@ -1,4 +1,4 @@
-import ItemListContainer from "../components/Container/ItemListContainer";
+import ItemListContainer from "../components/Container/ItemListContainer/ItemListContainer";
 import { Link, useParams } from "react-router-dom";
 
 const Products = ({product} ) =>{

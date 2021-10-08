@@ -1,5 +1,5 @@
 import React from "react";
-import ItemDetailContainer from "../components/Container/ItemDetailContainer";
+import ItemDetailContainer from "../components/Container/ItemDetailContainer/ItemDetailContainer";
 
 
 
