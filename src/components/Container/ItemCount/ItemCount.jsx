@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Button from "../..src/components/Container/ItemCount.jsx /Button/Button";
+import Button from "../../Button/Button";
 import "./ItemCount.css";
 import { CartContextUse } from "../../../Context/CartContext";
 export const ItemCount = ({detail}) => {
