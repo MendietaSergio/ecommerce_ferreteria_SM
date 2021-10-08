@@ -107,7 +107,7 @@ const ContainerCart = () => {
                     <div className="col">
                       <div className="d-flex flex-column text-left">
                         <h5>{element.item.title}</h5>
-                        <Link to={`/detalle/${element.item.title}`}>Detalle</Link>
+                        <Link to={`/detalle/${element.item.id}`}>Detalle</Link>
                       </div>
                     </div>
                     <div className="col text-center">
