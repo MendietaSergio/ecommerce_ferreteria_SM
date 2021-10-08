@@ -14,9 +14,9 @@
     content   : '';
     position  : absolute;
     width     : 95%;
-    height    : 2px;
+    height    : 1px;
     left      : 15px;
-    top       : 50%;
+    top       : 60%;
     background: #5a5a5a;
     z-index   : 50;
 }
