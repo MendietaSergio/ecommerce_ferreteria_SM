@@ -33,7 +33,7 @@ const Detail = ({
                 </div>
             </div>
             <div>
-                <Slider title="Silimales" productEquals={true} to={`/productos/${detail.category}`}/>
+                <Slider title="Silimales" productEqual={detail} to={`/productos/${detail.category}`}/>
             </div>
         </>
     )
