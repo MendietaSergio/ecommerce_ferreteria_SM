@@ -1,0 +1,44 @@
+.titulo h1 {
+    text-align: left !important;
+    position  : relative;
+}
+
+.titulo h1 span {
+    background: #E7E7E7;
+    z-index   : 100;
+    position  : relative;
+    padding   : 10px;
+}
+
+.titulo h1::after {
+    content   : '';
+    position  : absolute;
+    width     : 95%;
+    height    : 2px;
+    left      : 15px;
+    top       : 50%;
+    background: #5a5a5a;
+    z-index   : 50;
+}
+/* 
+.titulo h1::before {
+    content   : '';
+    position  : absolute;
+    width     : 50%;
+    height    : 2px;
+    right     : 15px;
+    top       : 50%;
+    background: #5a5a5a;
+    z-index   : 50;
+} */
+
+@media screen and (min-width: 768px){
+
+    .titulo h1::after {
+        left: 50px !important;
+    }
+
+    .titulo h1::before {
+        right     : 50px;
+    }
+}
