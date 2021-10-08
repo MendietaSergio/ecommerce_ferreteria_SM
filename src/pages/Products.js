@@ -20,7 +20,9 @@ const Products = ({product} ) =>{
                 }
             </span>
         </div>
+        <div className="container-body-pages">
             <ItemListContainer/>
+        </div>
         </>
     )
 }

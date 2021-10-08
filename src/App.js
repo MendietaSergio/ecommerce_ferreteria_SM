@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <div className="container">
+          <div className="container container-body">
             <Route path="/" exact>
               <Home />
             </Route>
