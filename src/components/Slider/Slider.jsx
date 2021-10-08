@@ -10,7 +10,7 @@ const Slider = ({
     to,
     productFeatured=false,
     productOffer= false,
-    productEquals=false,
+    productEqual
 
 }) =>{
     const [ products, setProducts ] = useState([])
@@ -32,7 +32,7 @@ const Slider = ({
                     .catch(err => console.log("ERROR => ",err))
             }
         const fetProductsEquals = async() =>{
-            dbQuery.collection('items').where('productFeatured','==',true).get()//llamo a todos los datos que tiene la coleccion 'items'
+            dbQuery.collection('items').where('category','==',productEqual.category).get()//llamo a todos los datos que tiene la coleccion 'items'
                     .then( resp =>{
                         setProducts(resp.docs.map(item => ({id: item.id, ...item.data()})))
                     })
