@@ -1,0 +1,15 @@
+.list-filter{
+    list-style: none;
+
+}
+.list-filter>a{
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px;
+    color: rgba(0, 0, 0, 0.638);
+    cursor: pointer;
+}
+.list-filter>a:focus{
+    background-color: #828282a4;
+}
