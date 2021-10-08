@@ -8,9 +8,11 @@ import Header from "./components/Header/Header";
 import ContainerCart from "./components/ContainerCart/ContainerCart";
 import Detail from "./pages/Detail";
 import { CartContextProvider } from "./Context/CartContext";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
+    <>
     <CartContextProvider>
       <BrowserRouter>
         <Header />
@@ -45,8 +47,10 @@ function App() {
             </Route>
           </div>
         </Switch>
+        <Footer/>
       </BrowserRouter>
     </CartContextProvider>
+    </>
   );
 }
 
