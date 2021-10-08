@@ -1,6 +1,7 @@
 .card{
     width: 16rem;
     margin: 10px;
+    height: 280px;
 }
 .card-img-top{
     height: 150px;
@@ -17,7 +18,7 @@
 .card-body{
     padding-bottom: 0;
 }
-.card-footer-detail{
+.card-link-detail{
     text-decoration: none;
     margin: 0 auto;
     color: black;
