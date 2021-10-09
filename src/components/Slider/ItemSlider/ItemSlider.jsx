@@ -19,10 +19,11 @@ const ItemSlider = ({
                     </div>        
                     <div className="card-footer text-center">
                         {product.discount >0 ?
-                        (<>
-                            <h6><strike>${product.price}</strike></h6>
-                            <h3 className="card-title-offer ">${(product.price)}</h3>
-                        </>
+                        (
+                            <>
+                                <h6><strike>${product.price}</strike></h6>
+                                <h3 className="card-title-offer ">${(product.price)}</h3>
+                            </>
                         ) : (
                             <h3 className="my-4" >${product.price}</h3>
                             
