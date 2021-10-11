@@ -18,7 +18,6 @@ const ItemList = ({
     await dbQuery.collection('category').get()
     .then(resp=>{
         setListCategory(resp.docs.map(item => ({id: item.id, ...item.data()})))
-        console.log("lista de category=> ", listCategory);
     })
     .catch(error => console.log(error))
     }
@@ -27,7 +26,6 @@ const ItemList = ({
   await dbQuery.collection('subCategory').get()
       .then(resp=>{
           setSubListCategory(resp.docs.map(item => ({id: item.id, ...item.data()})))
-          console.log("Lista de subcateogoria=> ",subListCategory);
       })
   }
   return (

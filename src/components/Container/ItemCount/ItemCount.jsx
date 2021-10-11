@@ -29,7 +29,6 @@ export const ItemCount = ({detail}) => {
   const onAdd = (count) => {
     addItem(detail, count)
     setCambiarBtn(false);
-    console.log("Cantidad del producto seleccionado: ",count);
   };
   
   return (

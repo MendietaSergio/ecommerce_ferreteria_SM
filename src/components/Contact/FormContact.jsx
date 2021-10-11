@@ -10,11 +10,10 @@ const FormContact =() =>{
           ...formData, //primero seteo lo que ya tiene
           [e.target.name]:e.target.value//se guarda el valor del nombre de cada input
          })
-         console.log(formData);
       }
     const handleOnSubmit = (e) =>{
         e.preventDefault()
-        console.log("Enviado: ",formData);
+        alert("Formulario enviado ! :D")
     }
     // agregar value a los input
     return(

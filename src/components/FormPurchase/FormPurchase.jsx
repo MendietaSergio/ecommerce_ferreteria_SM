@@ -23,7 +23,6 @@ const FormPurchase = ({
       ...formData, //primero seteo lo que ya tiene
       [e.target.name]: e.target.value, //se guarda el valor del nombre de cada input
     });
-    console.log(e.target.value);
   };
 
   

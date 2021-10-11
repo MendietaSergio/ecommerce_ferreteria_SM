@@ -40,9 +40,7 @@ const Slider = ({
     useEffect (() =>{
         if(productFeatured){
             fetProductsFeatured()
-            console.log("verdadero productoss", products);
         }else if(productOffer){
-            console.log("verdadero oferta",products);
             fetProductsOffer()
         } else{
             fetProductsEquals()

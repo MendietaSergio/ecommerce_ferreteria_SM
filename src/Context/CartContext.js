@@ -40,7 +40,7 @@ export const  CartContextProvider = ({children}) => {
                     })
                 })
                 batch.commit().then((res => {
-                    console.log("Resultado de batch ", res);
+
                 }))
             })
     }
@@ -71,7 +71,7 @@ export const  CartContextProvider = ({children}) => {
     const iconCart =() =>{
         return cart.reduce((acum, valor)=> acum + valor.quantity,0)
     }
-    console.log("carrito: ",cart);
+
     return(
         <CartContext.Provider value = {{cart, addItem, clear, removeItem, iconCart, orders}}>
             {children}

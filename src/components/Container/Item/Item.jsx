@@ -13,7 +13,6 @@ const Item = ({
 
     const onAdd = () => {
         addItem(product, 1)
-        console.log("producto agregado, ", product);
         setCambiarBtn(false);
     };
     return(
