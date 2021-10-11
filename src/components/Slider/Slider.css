@@ -6,7 +6,7 @@
     scroll-snap-type: x mandatory;
 }
 .slider::-webkit-scrollbar-thumb:hover{
-    background: linear-gradient(left, rgb(204, 0, 0), rgb(140, 3, 3));
+    background: linear-gradient(rgb(204, 0, 0), rgb(140, 3, 3));
 }
 .slider{
     width: 100%;
