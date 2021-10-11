@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../../images/Logo.png"
 import Button from "../Button/Button";
@@ -14,29 +14,29 @@ const NavbarHeader = () => {
     
     const [listCategory, setListCategory] = useState([])
     const [subListCategory, setSubListCategory] = useState([])
+    const dbQuery = getFirestore()
     useEffect(()=>{    
-        const dbQuery = getFirestore()
-
-        const getCategory = async () =>{
-        await dbQuery.collection('category').get()
-        .then(resp=>{
-            setListCategory(resp.docs.map(item => ({id: item.id, ...item.data()})))
-            console.log("lista de category=> ", listCategory);
-        })
-        .catch(error => console.log(error))
-        }
-        
-        const getSubCategory = async () =>{        
-        await dbQuery.collection('subCategory').get()
-            .then(resp=>{
-                setSubListCategory(resp.docs.map(item => ({id: item.id, ...item.data()})))
-                console.log("Lista de subcateogoria=> ",subListCategory);
-            })
-        }
-
         getCategory()
         getSubCategory()
+        
     },[])
+    const getCategory = async () =>{
+    await dbQuery.collection('category').get()
+    .then(resp=>{
+        setListCategory(resp.docs.map(item => ({id: item.id, ...item.data()})))
+        console.log("lista de category=> ", listCategory);
+    })
+    .catch(error => console.log(error))
+    }
+    
+    const getSubCategory = async () =>{
+    await dbQuery.collection('subCategory').get()
+        .then(resp=>{
+            setSubListCategory(resp.docs.map(item => ({id: item.id, ...item.data()})))
+            console.log("Lista de subcateogoria=> ",subListCategory);
+        })
+    }
+    
     return (
         <>        
             <div className="logo">
