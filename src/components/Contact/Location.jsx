@@ -8,13 +8,13 @@ const Location = () => {
         <div>
           <ul className="list-location">
             <li className="list-location">
-              <i class="fas fa-mobile-alt"></i> Telefono: 1123456789
+              <i className="fas fa-mobile-alt"></i> Telefono: 1123456789
             </li>
             <li className="list-location">
-              <i class="far fa-envelope"></i> Correo: ferredelbarrio@gmail.com
+              <i className="far fa-envelope"></i> Correo: ferredelbarrio@gmail.com
             </li>
             <li className="list-location">
-              <i class="fas fa-thumbtack"></i> Ubicación: Quilmes, zona sur
+              <i className="fas fa-thumbtack"></i> Ubicación: Quilmes, zona sur
             </li>
           </ul>
         </div>

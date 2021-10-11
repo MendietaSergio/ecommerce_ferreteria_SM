@@ -72,7 +72,7 @@ const ContainerCart = () => {
                       <h5>TOTAL</h5>                      
                       <span>${element.item.price*element.quantity},00</span>
                       <br />
-                      <i class="far fa-trash-alt" onClick={()=>removeItem(element.item.id)}></i>
+                      <i className="far fa-trash-alt" onClick={()=>removeItem(element.item.id)}></i>
                     </div>
                   </div>
                   <hr />

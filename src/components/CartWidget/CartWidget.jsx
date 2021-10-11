@@ -8,7 +8,6 @@ const CartWidget = ({ className = "carrito-lg" }) => {
   return (
     <>
       <Link to="/carrito" className={className}>
-        {console.log(iconCart())}
         {iconCart() === 0 ? null : (
             <div>
                 <i className="fas fa-shopping-cart"></i>
