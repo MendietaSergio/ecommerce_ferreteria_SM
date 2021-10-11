@@ -4,10 +4,10 @@ import "./ContainerCart.css";
 import { CartContextUse } from "../../Context/CartContext";
 import CartEmpty from "../../images/carritoVacio.png";
 import { Link } from "react-router-dom";
-//para el uso de la fecha de compra
-//importar funcion que devuelva la fecha
-import firebase from "firebase"
-import 'firebase/firestore'
+// //para el uso de la fecha de compra
+// //importar funcion que devuelva la fecha
+// import firebase from "firebase"
+// import 'firebase/firestore'
 import FormPurchase from "../FormPurchase/FormPurchase";
 
 const ContainerCart = () => {

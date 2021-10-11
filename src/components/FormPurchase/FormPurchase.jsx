@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { CartContextUse } from "../../Context/CartContext";
 import Button from "../Button/Button";
+import Swal from 'sweetalert2'
+import { useHistory } from "react-router";
 
-//importar funcion que devuelva la fecha
-import firebase from "firebase";
-import "firebase/firestore";
 const initialData = {
   name: "",
   tel: "",
@@ -17,6 +16,7 @@ const FormPurchase = ({
  }) => {
   const { orders, clear } = CartContextUse();
   const [formData, setFormData] = useState(initialData);
+  const history = useHistory()
 
   const handleOnChange = (e) => {
     setFormData({
@@ -26,12 +26,33 @@ const FormPurchase = ({
     console.log(e.target.value);
   };
 
+  
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    orders(formData, priceTotal)
-    setFormData(initialData)
-    clear()
-    setShow(!show)
+    // alert("alerta ")
+    
+    Swal.fire({
+      title: '¿Está seguro con los datos de la compra?',
+      showDenyButton: true,
+      // showCancelButton: true,
+      confirmButtonText: 'Confirmar',
+      position: 'center',
+      background:"#FFF"
+    }).then((result) => {
+      if (result.isConfirmed) {
+          Swal.fire('Compra realizada!', '', 'success')
+          setTimeout(() =>{
+          orders(formData, priceTotal)
+          setFormData(initialData)
+          clear()
+          setShow(!show)
+          history.push("/")
+        }, 6000);
+      } else if (result.isDenied) {
+        Swal.fire('Compra cancelada', '', 'info')
+      }
+    })
+    
   };
   const CancelarCompra = () =>{
     setShow(!show)
