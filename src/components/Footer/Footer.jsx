@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="col-sm col-md col-lgw-100">
               <h5 className="text-center footer_title">Medio de pago</h5>
                 <div className="d-flex justify-content-center">
-                <img className="img_pago" src={MercadoPago}/>
+                <img className="img_pago" src={MercadoPago} alt="MercadoPago"/>
                 </div>            
             </div>
             <div className="col-sm col-md col-lg  w-100">
