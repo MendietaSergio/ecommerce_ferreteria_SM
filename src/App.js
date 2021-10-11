@@ -17,35 +17,37 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <div className="container container-body">
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/productos" exact>
-              <Products />
-            </Route>
-            <Route path="/productos/:idCategory" exact>
-              <Products />
-            </Route>
-            <Route path="/productos/:idCategory/:idSubCategory" exact>
-              <Products />
-            </Route>
-            <Route path="/search" exact>
-              <Products />
-            </Route>
-            <Route path="/detalle/:idProduct" exact>
-              <Detail />
-            </Route>
-            <Route path="/contacto" exact>
-              <Contact />
-            </Route>
-            <Route path="/ingresar" exact>
-              <Signin />
-            </Route>
-            <Route path="/carrito" exact>
-              <ContainerCart />
-            </Route>
-          </div>
+          <> 
+            <div className="container container-body">
+              <Route path="/" exact>
+                <Home />
+              </Route>
+              <Route path="/productos" exact>
+                <Products />
+              </Route>
+              <Route path="/productos/:idCategory" exact>
+                <Products />
+              </Route>
+              <Route path="/productos/:idCategory/:idSubCategory" exact>
+                <Products />
+              </Route>
+              <Route path="/search" exact>
+                <Products />
+              </Route>
+              <Route path="/detalle/:idProduct" exact>
+                <Detail />
+              </Route>
+              <Route path="/contacto" exact>
+                <Contact />
+              </Route>
+              <Route path="/ingresar" exact>
+                <Signin />
+              </Route>
+              <Route path="/carrito" exact>
+                <ContainerCart />
+              </Route>
+            </div>
+          </>
         </Switch>
         <Footer/>
       </BrowserRouter>
