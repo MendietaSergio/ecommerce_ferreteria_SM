@@ -19,7 +19,7 @@ const Item = ({
         <>
             <div key={product.id} className="card mt-2" >
                 <Link className="card-link-detail" to={`/detalle/${product.id}`}>
-                    <img className="card-img-top" src={`/assets/img/Productos/${product.pictureUrl}`} alt={product.title}/>
+                    <img className="card-img-top" src={`${product.picture}`} alt={product.title}/>
                     <div className="card-body">
                         <h5 className="card-title">{product.title}</h5>
                     </div>        
