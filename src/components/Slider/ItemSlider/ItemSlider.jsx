@@ -22,7 +22,7 @@ const ItemSlider = ({
                         (
                             <>
                                 <h6><strike>${product.price}</strike></h6>
-                                <h3 className="card-title-offer ">${(product.price)}</h3>
+                                <h3 className="card-title-offer ">${product.price - (product.price*product.discount/100)}</h3>
                             </>
                         ) : (
                             <h3 className="my-4" >${product.price}</h3>
