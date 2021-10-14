@@ -9,6 +9,7 @@ import ContainerCart from "./components/ContainerCart/ContainerCart";
 import Detail from "./pages/Detail";
 import { CartContextProvider } from "./Context/CartContext";
 import Footer from "./components/Footer/Footer";
+import AdminAddProduct from "./pages/AdminAddProduct";
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
               </Route>
               <Route path="/carrito" exact>
                 <ContainerCart />
+              </Route>
+              <Route path="/agregar-productos" exact>
+                <AdminAddProduct />
               </Route>
             </div>
           </>
