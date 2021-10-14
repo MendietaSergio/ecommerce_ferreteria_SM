@@ -50,7 +50,7 @@ const ContainerCart = () => {
                     <div className="col">
                       <img
                         className="card-img-top"
-                        src={`/assets/img/Productos/${element.item.pictureUrl}`}
+                        src={element.item.picture}
                         alt=""
                       />
                     </div>

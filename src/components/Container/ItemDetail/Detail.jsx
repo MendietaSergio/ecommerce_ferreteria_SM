@@ -8,7 +8,7 @@ const Detail = ({
         <>
             <div className="col-lg-6 mb-4">
                     <div className="main-product-image">
-                        <img className="main-product-image" src={`/assets/img/productos/${detail.pictureUrl}`} alt={detail.title}/>
+                        <img className="main-product-image" src={detail.picture} alt={detail.title}/>
                     </div>
             </div>
             <div className="col-lg-6 p-5 ">
