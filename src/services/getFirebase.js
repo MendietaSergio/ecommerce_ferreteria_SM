@@ -1,5 +1,6 @@
 import firebase from "firebase"
 import 'firebase/firestore'
+import 'firebase/storage'
 
 
 // Your web app's Firebase configuration
@@ -28,6 +29,8 @@ export const getFirestore = () =>{
     
     return firebase.firestore(app)
 }
-
+export const getFirestorage = ( ) =>{
+    return firebase.storage()
+}
 //hacer funcion para devolver la fecha asi no tengo que importar en el carrito, 
 
