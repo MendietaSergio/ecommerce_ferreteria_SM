@@ -6,6 +6,7 @@
 }
 .fa-shopping-cart{
     position: relative;
+    cursor: pointer;
 }
 .cart_num{
     position: absolute;
@@ -14,6 +15,36 @@
     background: red;
     width: 15px;
     height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2px;
+}
+.container-cart-list{
+    position: fixed;
+    right: 0;
+    top: 136px;
+    background-color: silver;
+    height: 100%;
+    width: 40%;
+}
+.productCartList{
+    height: 80%;
+    overflow-y: auto;
+    padding: 0 10px;
+}
+.container-closeCartList{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.closeCartList{
+    background: rgb(7, 7, 7);
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
