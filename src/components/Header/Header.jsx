@@ -3,7 +3,9 @@ import Navbar from "../Navbar/Navbar";
 import Button from "../Button/Button"
 import CartWidget from '../CartWidget/CartWidget';
 import Search from '../Search/Search';
-const NavBar = () => {
+const NavBar = ({
+    activeBtnCart
+}) => {
     return (
         <>
             <header className="container-fluid header shadow">
@@ -28,7 +30,7 @@ const NavBar = () => {
                         </div>
                     </div>
                     <section className="container">
-                        <Navbar />
+                        <Navbar activeBtnCart={activeBtnCart}/>
                     </section>
                 </div>
             </header>

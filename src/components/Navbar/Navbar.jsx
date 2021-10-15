@@ -7,7 +7,9 @@ import Search from "../Search/Search";
 import {NavDropdown} from "react-bootstrap"
 import "./Navbar.css"
 import { getFirestore } from "../../services/getFirebase";
-const NavbarHeader = () => {
+const NavbarHeader = ({
+    activeBtnCart
+}) => {
     const [show, setShow] = useState(false);
     const handleShow = ( ) => setShow(!show);
     const closeNav = () => setShow(false);
@@ -82,7 +84,7 @@ const NavbarHeader = () => {
                         {show ? null:(<Search  />)}
                         </div>
                         <div className="col-3 d-flex justify-content-center">
-                        {show ? null:(<CartWidget />)}
+                        {show ? null:(<CartWidget activeBtnCart={activeBtnCart}/>)}
                         </div>                       
                     </div>                  
                 </div>
