@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -12,11 +13,12 @@ import Footer from "./components/Footer/Footer";
 import AdminAddProduct from "./pages/AdminAddProduct";
 
 function App() {
+  const [activeBtnCart, setActiveBtn ] = useState(true)
   return (
     <>
     <CartContextProvider>
       <BrowserRouter>
-        <Header />
+        <Header activeBtnCart={true}/>
         <Switch>
           <> 
             <div className="container container-body">
@@ -45,7 +47,7 @@ function App() {
                 <Signin />
               </Route>
               <Route path="/carrito" exact>
-                <ContainerCart />
+                <ContainerCart activeBtnCart={false}/>
               </Route>
               <Route path="/agregar-productos" exact>
                 <AdminAddProduct />
