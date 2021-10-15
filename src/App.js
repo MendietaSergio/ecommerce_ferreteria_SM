@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -13,7 +13,6 @@ import Footer from "./components/Footer/Footer";
 import AdminAddProduct from "./pages/AdminAddProduct";
 
 function App() {
-  const [activeBtnCart, setActiveBtn ] = useState(true)
   return (
     <>
     <CartContextProvider>
