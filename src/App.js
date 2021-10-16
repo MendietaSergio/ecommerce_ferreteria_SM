@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import Signin from "./pages/Signin";
+// import Signin from "./pages/Signin";
 import Products from "./pages/Products";
 
 import Header from "./components/Header/Header";
@@ -42,9 +42,9 @@ function App() {
               <Route path="/contacto" exact>
                 <Contact />
               </Route>
-              <Route path="/ingresar" exact>
+              {/* <Route path="/ingresar" exact>
                 <Signin />
-              </Route>
+              </Route> */}
               <Route path="/carrito" exact>
                 <ContainerCart activeBtnCart={false}/>
               </Route>
