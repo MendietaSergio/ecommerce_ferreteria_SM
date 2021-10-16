@@ -1,3 +1,4 @@
+import React from "react";
 import MercadoPago from "../../images/icon_mercadopago.png"
 
 

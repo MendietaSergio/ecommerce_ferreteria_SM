@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import React,{ createContext, useContext, useState } from "react";
 //importar funcion que devuelva la fecha
 import firebase from "firebase";
 import "firebase/firestore";

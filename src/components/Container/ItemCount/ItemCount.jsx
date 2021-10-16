@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React,{ useEffect, useState } from "react";
 import Button from "../../Button/Button";
 import "./ItemCount.css";
 import { CartContextUse } from "../../../Context/CartContext";
