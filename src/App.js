@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import Signin from "./pages/signin";
+import Signin from "./pages/Signin";
 import Products from "./pages/Products";
 
 import Header from "./components/Header/Header";

@@ -12,13 +12,6 @@ const CartWidget = ({
   const { iconCart } = CartContextUse();
   const [showCartList, setShowCartList] = useState(false);
 
-  const ViewCartList = () => {
-    setTimeout(()=> setShowCartList(true),3000)
-    console.log("muestro la lista del carrito");
-    
-    
-  };
-
   return (
     <>
       {/* <Link to="/carrito" className={className}> */}
