@@ -29,9 +29,7 @@ export const  CartContextProvider = ({children}) => {
         db.collection("orders")
             .add(order)
             .then(({id}) => {
-                console.log("id cartContext ",id);
                 setOrderId(id)
-                console.log("orderId cartContext ", orderId);
             })
         
         const itemsToUpdate = db.collection("items").where(firebase.firestore.FieldPath.documentId(),"in",cart.map((i)=> i.item.id))

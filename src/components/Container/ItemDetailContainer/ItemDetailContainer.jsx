@@ -18,11 +18,9 @@ const ItemDetailContainer = () => {
           .get() //Traigo el producto desde el id.
           .then((resp) => {
             if (resp.data() != null) {
-              console.log("Producto existente, ", resp.data());
               setDetailProduct({ id: resp.id, ...resp.data() }); //Seteo el nuevo array.
               setShowDetailFail(false);
             } else {
-              console.log("el producto no existe ", resp.data());
               setShowDetailFail(true);
               messageTime()
             }

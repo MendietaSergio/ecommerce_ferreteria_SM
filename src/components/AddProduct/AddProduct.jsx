@@ -35,7 +35,6 @@ const AddProduct = () => {
         setListCategory(
           resp.docs.map((item) => ({ id: item.id, ...item.data() }))
         );
-        console.log("lista de category=> ", listCategory);
       })
       .catch((error) => console.log(error));
   };
@@ -48,19 +47,16 @@ const AddProduct = () => {
         setSubListCategory(
           resp.docs.map((item) => ({ id: item.id, ...item.data() }))
         );
-        console.log("Lista de subcateogoria=> ", subListCategory);
       });
   };
 
   const handleOnChangeCheckedOffer = (e) => {
     if (e.target.value === "1") {
-      console.log("target es true");
       setConfirmOffer(true);
       setShowDiscount(true);
       setValueOffer(true);
       setValue("discount", 30);
     } else {
-      console.log("target es false");
       setConfirmOffer(false);
       setValue("discount", 0);
       setShowDiscount(false);
@@ -80,7 +76,6 @@ const AddProduct = () => {
     }
   };
   const Submit = (data) => {
-    console.log("submit inicial=> ", data);
     uploadImage(data.picture[0]);
     if (confirmOffer) {
       data.offer = valueOffer;
@@ -91,9 +86,7 @@ const AddProduct = () => {
     data.price = parseInt(data.price);
     data.discount = parseInt(data.discount);
     data.stock = parseInt(data.stock);
-    console.log("submit cambiado nameproduct=> ", data);
     // PARA SUBIR EL PRODUCTO A FIREBASE
-
     const db = getFirestore();
     db.collection("items")
       .add(data)
@@ -301,6 +294,5 @@ const initialData = {
   picture: "",
   productFeatured: false,
 };
-console.log(initialData);
 
 export default AddProduct;
