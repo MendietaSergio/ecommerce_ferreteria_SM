@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import AdminAddProduct from "./pages/AdminAddProduct";
 import Signin from "./pages/Signin";
 import { CartContextProvider } from "./Context/CartContext";
+import PurchaseCompleted from "./components/PurchaseCompleted/PurchaseCompleted";
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
               </Route>
               <Route path="/carrito" exact>
                 <ContainerCart activeBtnCart={false}/>
+              </Route>
+              <Route path="/compra-finalizada" exact>
+                <PurchaseCompleted/>
               </Route>
               <Route path="/agregar-productos" exact>
                 <AdminAddProduct />

@@ -27,9 +27,7 @@ const FormPurchase = ({
 
   
   const handleOnSubmit = (e) => {
-    e.preventDefault();
-    // alert("alerta ")
-    
+    e.preventDefault();  
     Swal.fire({
       title: '¿Está seguro con los datos de la compra?',
       showDenyButton: true,
@@ -45,13 +43,12 @@ const FormPurchase = ({
           setFormData(initialData)
           clear()
           setShow(!show)
-          history.push("/")
+          history.push("/compra-finalizada")
         }, 6000);
       } else if (result.isDenied) {
         Swal.fire('Compra cancelada', '', 'info')
       }
     })
-    
   };
   const CancelarCompra = () =>{
     setShow(!show)
@@ -96,7 +93,6 @@ const FormPurchase = ({
                     value={formData.email}
                     />
                 </div>
-                
                 <div className="col d-flex justify-content-end mx-5 my-4">
                   <Button
                     className="btn btn-danger mx-2"
