@@ -12,6 +12,7 @@ export const CartContextUse = () =>{
 
 export const  CartContextProvider = ({children}) => {
     const [cart, setCart ] = useState([])
+    const [orderId, setOrderId ] = useState()
     const orders = (formData, priceTotal) =>{
         let order = {};
 
@@ -27,7 +28,11 @@ export const  CartContextProvider = ({children}) => {
         const db = getFirestore();
         db.collection("orders")
             .add(order)
-            .then((resp) => console.log(resp))
+            .then(({id}) => {
+                console.log("id cartContext ",id);
+                setOrderId(id)
+                console.log("orderId cartContext ", orderId);
+            })
         
         const itemsToUpdate = db.collection("items").where(firebase.firestore.FieldPath.documentId(),"in",cart.map((i)=> i.item.id))
         const batch = db.batch();
@@ -73,7 +78,7 @@ export const  CartContextProvider = ({children}) => {
     }
 
     return(
-        <CartContext.Provider value = {{cart, addItem, clear, removeItem, iconCart, orders}}>
+        <CartContext.Provider value = {{cart, addItem, clear, removeItem, iconCart, orders, orderId, setOrderId }}>
             {children}
         </CartContext.Provider>
     )
