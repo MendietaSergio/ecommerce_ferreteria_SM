@@ -1,4 +1,4 @@
-const validations = {
+const validationAddProduct = {
     nameProduct:{
       required :{
         value: true,
@@ -72,4 +72,4 @@ const validations = {
       },
     }
   }
-export default validations;
+export default validationAddProduct;
