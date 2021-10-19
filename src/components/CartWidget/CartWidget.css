@@ -3,6 +3,7 @@
     margin: 0 auto !important;
     align-items: center !important;
     display: flex;
+    color: white;
 }
 .fa-shopping-cart{
     position: relative;
@@ -26,7 +27,7 @@
     position: fixed;
     right: 0;
     top: 136px;
-    background-color: silver;
+    background-color: rgb(255, 255, 255);
     height: 100%;
     width: 40%;
 }
