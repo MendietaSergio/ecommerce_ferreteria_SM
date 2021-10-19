@@ -5,8 +5,13 @@
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
 }
+.slider::-webkit-scrollbar{
+    background-color: rgb(189, 189, 189);
+    height: 10px;
+}
 .slider::-webkit-scrollbar-thumb:hover{
-    background: linear-gradient(rgb(204, 0, 0), rgb(140, 3, 3));
+    background: linear-gradient(rgba(60, 60, 60, 0.7), rgb(84, 84, 84));
+    border-radius: 10px;
 }
 .slider{
     width: 100%;
