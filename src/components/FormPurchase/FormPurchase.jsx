@@ -6,11 +6,6 @@ import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
 import validationPurchase from "../../validations/Purchase.js";
 
-const initialData = {
-  name: "",
-  tel: "",
-  email: "",
-};
 const FormPurchase = ({ setShow, show, priceTotal }) => {
   const { orders, clear } = CartContextUse();
   const [errorEmail2, setErrorEmail2] = useState("");
@@ -23,7 +18,7 @@ const FormPurchase = ({ setShow, show, priceTotal }) => {
   } = useForm();
 
   const submit = (data) => {
-    if (data.email != data.email2) {
+    if (data.email !== data.email2) {
       setErrorEmail2("El mail debe ser igual al anterior.");
     } else {
       setErrorEmail2("");
