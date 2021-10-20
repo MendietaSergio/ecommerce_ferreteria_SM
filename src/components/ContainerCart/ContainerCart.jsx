@@ -10,7 +10,6 @@ const ContainerCart = ({ activeBtnCart }) => {
   const [show, setShow] = useState(false);
   const { clear, removeItem, cart } = CartContextUse();
   const [priceTotal, setPriceTotal] = useState(0);
-  
   const ViewForm = () => {
     setShow(true);
   };
@@ -49,7 +48,7 @@ const ContainerCart = ({ activeBtnCart }) => {
                     <img
                       className="card-img-top"
                       src={element.item.picture}
-                      alt=""
+                      alt="Producto"
                     />
                   </div>
                   <div className="col">
@@ -60,13 +59,13 @@ const ContainerCart = ({ activeBtnCart }) => {
                   </div>
                   <div className="col text-center">
                     <h5>precio</h5>
-                    <span>${element.item.price},00</span>
+                    <span>{element.item.price},00</span>
                   </div>
                   <div className="col text-center">
                     <h5>Cantidad</h5>
                     <input
                       className="input-cart"
-                      value={element.quantity}
+                      defaultValue={element.quantity}
                       type="number"
                       min="1"
                       max="10"
@@ -74,7 +73,7 @@ const ContainerCart = ({ activeBtnCart }) => {
                   </div>
                   <div className="col text-center">
                     <h5>TOTAL</h5>
-                    <span>${element.item.price * element.quantity},00</span>
+                    <span>{element.item.price * element.quantity},00</span>
                     <br />
                     <i
                       className="far fa-trash-alt"
@@ -87,7 +86,7 @@ const ContainerCart = ({ activeBtnCart }) => {
             ))}
             <div className="row">
               <div className="col">
-                <h4 className="sub-amount">Subtotal: ${priceTotal}</h4>
+                <h4 className="sub-amount">Subtotal: {priceTotal}</h4>
               </div>
             </div>
             {activeBtnCart ? (null) : (
