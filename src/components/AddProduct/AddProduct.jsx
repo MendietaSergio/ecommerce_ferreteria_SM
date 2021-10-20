@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import Button from "../Button/Button";
 import { getFirestorage, getFirestore } from "../../services/getFirebase";
 import { useForm } from "react-hook-form";
@@ -9,12 +8,10 @@ import Swal from "sweetalert2";
 //seguir con la importacion de las categorias
 const AddProduct = () => {
   const [confirmOffer, setConfirmOffer] = useState(true);
-  const [urlImg, setUrlImg] = useState("");
   const [valueOffer, setValueOffer] = useState(true);
   const [showDiscount, setShowDiscount] = useState(false);
   const [listCategory, setListCategory] = useState([]);
   const [subListCategory, setSubListCategory] = useState([]);
-  console.log("urlIMG ", urlImg);
   const {
     register,
     handleSubmit,
@@ -66,8 +63,7 @@ const AddProduct = () => {
       setValueOffer(false);
     }
   };
-  // PARA SUBIR EL PRODUCTO A FIREBASE
-  const db = getFirestore();
+
   //FUNCION PARA GUARDAR LA IMAGEN EN FIREBASE
   const uploadImage = async (data) => {
     try {
@@ -75,12 +71,12 @@ const AddProduct = () => {
       const newRef = fireStorage.ref("img_products").child(fileName + ".png"); // nombre del archivo
       await newRef.put(data.picture[0]);
       let urlImagen = await newRef.getDownloadURL();
-      if (urlImagen != undefined) {
+      if (urlImagen !== undefined) {
         data.picture = urlImagen;
-        db.collection("items")
+        dbQuery.collection("items")
           .add(data)
           .then((resp) => console.log(resp));
-        // reset()
+        reset()
         console.log(data);
       }
     } catch (error) {
@@ -257,6 +253,19 @@ const AddProduct = () => {
             </div>
           ) : null}
         </div>
+        <div class="form-group my-3">
+          <label htmlFor="desciption">Descripción</label>
+          <textarea
+            name="description"
+            class="form-control"
+            id="description"
+            {...register("description", validations.description)}
+            rows="3"
+          ></textarea>
+          {errors.description ? (
+            <p className="text-danger">{errors.description.message}</p>
+          ) : null}
+        </div>{" "}
         <div className="form-group my-3">
           <label htmlFor="picture">Subir imagen</label>
           <div>
