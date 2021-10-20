@@ -10,7 +10,7 @@ const ItemDetail =({detail}) =>{
 
     return(
         <>
-            <h5 className="text-center mt-5 mb-5">{detail.title}</h5>
+            <h5 className="text-center mt-5 mb-5">{detail.nameProduct}</h5>
             <span className="link-page">
                 <Link to="/">Home<i className="fas fa-chevron-right"></i></Link>
                 <Link to="/productos">Productos<i className="fas fa-chevron-right"></i></Link>

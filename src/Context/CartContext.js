@@ -21,9 +21,9 @@ export const  CartContextProvider = ({children}) => {
         order.total = priceTotal;
         order.items = cart.map((cartItem) =>{
             const id = cartItem.item.id;
-            const title = cartItem.item.title;
+            const nameProduct = cartItem.item.nameProduct;
             const price = cartItem.item.price * cartItem.quantity
-            return {id, title, price}
+            return {id, nameProduct, price}
         })
         const db = getFirestore();
         db.collection("orders")

@@ -31,7 +31,7 @@ const ContainerCart = ({ activeBtnCart }) => {
           <>
             <div className="py-4">
               <h1 className="text-center my-3">No hay nada por aquí...</h1>
-              <img className="card-img-top" src={CartEmpty} alt="" />
+              <img className="card-img-top" src={CartEmpty} alt="Carrito vacío" />
               <h3 className="text-center my-3">
                 Puedes ver mas{" "}
                 <Link className="products" to="/productos">
@@ -54,7 +54,7 @@ const ContainerCart = ({ activeBtnCart }) => {
                   </div>
                   <div className="col">
                     <div className="d-flex flex-column text-left">
-                      <h5>{element.item.title}</h5>
+                      <h5>{element.item.nameProduct}</h5>
                       <Link to={`/detalle/${element.item.id}`}>Detalle</Link>
                     </div>
                   </div>
