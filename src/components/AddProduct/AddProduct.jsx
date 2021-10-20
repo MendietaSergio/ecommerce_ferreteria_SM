@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+
 import Button from "../Button/Button";
 import { getFirestorage, getFirestore } from "../../services/getFirebase";
 import { useForm } from "react-hook-form";
 import validations from "../../validations/AddProduct";
+import Swal from "sweetalert2";
+
 //seguir con la importacion de las categorias
 const AddProduct = () => {
   const [confirmOffer, setConfirmOffer] = useState(true);
@@ -11,22 +14,23 @@ const AddProduct = () => {
   const [showDiscount, setShowDiscount] = useState(false);
   const [listCategory, setListCategory] = useState([]);
   const [subListCategory, setSubListCategory] = useState([]);
-
+  console.log("urlIMG ", urlImg);
   const {
     register,
     handleSubmit,
     setValue,
     formState: { errors },
+    reset,
   } = useForm();
-  
+
   const fireStorage = getFirestorage();
   const dbQuery = getFirestore();
-  
+
   useEffect(() => {
     getCategory();
     getSubCategory();
   }, []);
-  
+
   const getCategory = async () => {
     await dbQuery
       .collection("category")
@@ -49,7 +53,6 @@ const AddProduct = () => {
         );
       });
   };
-
   const handleOnChangeCheckedOffer = (e) => {
     if (e.target.value === "1") {
       setConfirmOffer(true);
@@ -63,34 +66,48 @@ const AddProduct = () => {
       setValueOffer(false);
     }
   };
+  // PARA SUBIR EL PRODUCTO A FIREBASE
+  const db = getFirestore();
   //FUNCION PARA GUARDAR LA IMAGEN EN FIREBASE
-  const uploadImage = async (nameImg) => {
+  const uploadImage = async (data) => {
     try {
-      let fileName = nameImg;
-      const newRef = fireStorage.ref("img_products").child(fileName.name); // nombre del archivo
-      await newRef.put(fileName);
+      const fileName = data.picture[0].name;
+      const newRef = fireStorage.ref("img_products").child(fileName + ".png"); // nombre del archivo
+      await newRef.put(data.picture[0]);
       let urlImagen = await newRef.getDownloadURL();
-      setUrlImg(urlImagen);
+      if (urlImagen != undefined) {
+        data.picture = urlImagen;
+        db.collection("items")
+          .add(data)
+          .then((resp) => console.log(resp));
+        // reset()
+        console.log(data);
+      }
     } catch (error) {
       alert(error);
     }
   };
   const Submit = (data) => {
-    uploadImage(data.picture[0]);
     if (confirmOffer) {
       data.offer = valueOffer;
     } else {
       data.offer = valueOffer;
     }
-    data.picture = urlImg;
     data.price = parseInt(data.price);
     data.discount = parseInt(data.discount);
     data.stock = parseInt(data.stock);
-    // PARA SUBIR EL PRODUCTO A FIREBASE
-    const db = getFirestore();
-    db.collection("items")
-      .add(data)
-      .then((resp) => console.log(resp));
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Producto agregado!",
+      confirmButtonText: "OK",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        uploadImage(data);
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
   };
   return (
     <>
@@ -98,7 +115,7 @@ const AddProduct = () => {
       <form onSubmit={handleSubmit(Submit)}>
         <div className="row">
           <div className="col-12 col-md-4 mb-3">
-            <label for="nameProduct">Nombre del producto</label>
+            <label htmlFor="nameProduct">Nombre del producto</label>
             <input
               type="text"
               className={
@@ -116,8 +133,8 @@ const AddProduct = () => {
             </span>
           </div>
           <div className="col-12 col-md-4 mb-3">
-            <div class="form-group">
-              <label for="category">Categoria</label>
+            <div className="form-group">
+              <label htmlFor="category">Categoria</label>
               <select
                 name="category"
                 className={
@@ -139,8 +156,8 @@ const AddProduct = () => {
             </div>
           </div>
           <div className="col-12 col-md-4 mb-3">
-            <div class="form-group">
-              <label for="subCategory">Subcategoria</label>
+            <div className="form-group">
+              <label htmlFor="subCategory">Subcategoria</label>
               <select
                 name="subCategory"
                 className={
@@ -166,8 +183,8 @@ const AddProduct = () => {
         </div>
         <div className="row">
           <div className="col-12 col-md-2 mb-3">
-            <div class="form-group">
-              <label for="price">Precio</label>
+            <div className="form-group">
+              <label htmlFor="price">Precio</label>
               <input
                 type="number"
                 name="price"
@@ -186,7 +203,7 @@ const AddProduct = () => {
             </div>
           </div>
           <div className="col-12 col-md-3 mb-3">
-            <label for="stock">Stock</label>
+            <label htmlFor="stock">Stock</label>
             <input
               type="number"
               name="stock"
@@ -202,7 +219,7 @@ const AddProduct = () => {
             ) : null}
           </div>
           <div className="col-12 col-md-3 mb-3">
-            <label for="offer">Oferta</label>
+            <label htmlFor="offer">Oferta</label>
             <select
               name="offer"
               className={
@@ -222,7 +239,7 @@ const AddProduct = () => {
           </div>
           {showDiscount ? (
             <div className="col-12 col-md-3 mb-3">
-              <label for="discount">Descuento</label>
+              <label htmlFor="discount">Descuento</label>
               <input
                 type="number"
                 className={
@@ -240,8 +257,8 @@ const AddProduct = () => {
             </div>
           ) : null}
         </div>
-        <div class="form-group my-3">
-          <label for="picture">Subir imagen</label>
+        <div className="form-group my-3">
+          <label htmlFor="picture">Subir imagen</label>
           <div>
             <input
               {...register("picture", validations.picture)}
@@ -258,7 +275,7 @@ const AddProduct = () => {
         </div>
         <div className="form-group">
           <div className="form-check">
-            <label for="productFeatured">Producto destacado</label>
+            <label htmlFor="productFeatured">Producto destacado</label>
             <input
               className={
                 errors.productFeatured
@@ -283,16 +300,4 @@ const AddProduct = () => {
     </>
   );
 };
-const initialData = {
-  nameProduct: "",
-  category: "",
-  subCategory: "",
-  price: 0,
-  offer: false,
-  discount: 0,
-  stock: 0,
-  picture: "",
-  productFeatured: false,
-};
-
 export default AddProduct;
