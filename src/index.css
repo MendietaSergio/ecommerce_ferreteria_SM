@@ -16,7 +16,7 @@ code {
     monospace;
 }
 .container-body{
-  height: auto;
+  min-height: 100vh;
 }
 .container-body-pages{
   height: 600px;
