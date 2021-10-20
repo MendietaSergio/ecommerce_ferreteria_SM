@@ -70,6 +70,20 @@ const validationAddProduct = {
         value: true,
         message:"El archivo es requerido."
       },
+    },
+    description:{
+      required: {
+        value: true,
+        message: "El campo es requerido."
+      },
+      minLength:{
+        value:8,
+        message:"Los carácteres mínimos son 8"
+      },
+      maxLength:{
+        value:100,
+        message:"Los carácteres mínimos son 100"
+      }
     }
   }
 export default validationAddProduct;
